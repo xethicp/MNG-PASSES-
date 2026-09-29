@@ -1,0 +1,2244 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mars Nova Global — Navratri Passes & Event Management, Surat</title>
+<meta name="description" content="Mars Nova Global (MNG) — Surat Navratri 2026 passes, artist management, show direction, vendor management and show operations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<style>
+:root{
+  --space:#04060f;
+  --space-2:#070c1d;
+  --ink:#0b1430;
+  --glass:rgba(20,33,68,.55);
+  --glass-2:rgba(12,22,50,.75);
+  --line:rgba(120,170,255,.16);
+  --line-strong:rgba(130,200,255,.34);
+  --cyan:#25d7f0;
+  --sapphire:#3b74ff;
+  --purple:#b06bff;
+  --marigold:#f7c65a;
+  --white:#f3f7ff;
+  --muted:#94a6cf;
+  --muted-2:#6d7fa8;
+  --danger:#ff6b81;
+  --ok:#3ddc97;
+  --r-lg:22px; --r-md:16px; --r-sm:11px;
+  --shadow:0 24px 60px rgba(0,0,0,.55);
+  --glow:0 0 0 1px rgba(60,200,255,.25), 0 8px 34px rgba(30,120,255,.35);
+  --max:1240px;
+  color-scheme:dark;
+}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme: light){ :root:not([data-theme="light"]){} }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(1200px 700px at 78% -12%, rgba(59,116,255,.22), transparent 60%),
+    radial-gradient(900px 620px at 8% 4%, rgba(37,215,240,.13), transparent 62%),
+    linear-gradient(180deg,#04060f 0%, #060a18 45%, #04060f 100%);
+  background-attachment:fixed;
+  color:var(--white);
+  font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:16.5px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4,.brandname,.num{font-family:"Sora",system-ui,sans-serif;letter-spacing:-.02em;line-height:1.14;margin:0}
+h1{font-size:clamp(2.1rem,5.2vw,3.7rem);font-weight:800}
+h2{font-size:clamp(1.55rem,3.2vw,2.3rem);font-weight:700}
+h3{font-size:1.16rem;font-weight:700}
+p{margin:0 0 1em;max-width:72ch;color:var(--muted)}
+a{color:var(--cyan);text-decoration:none}
+img{max-width:100%;display:block}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2.5px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:20px}
+.sec{padding:60px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:26px;flex-wrap:wrap}
+.sec-head p{margin:8px 0 0;font-size:.97rem}
+.starfield{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55}
+.page{position:relative;z-index:1}
+
+/* ---------- ticker ---------- */
+.ticker{position:relative;z-index:60;background:linear-gradient(90deg,rgba(37,215,240,.16),rgba(59,116,255,.2),rgba(247,198,90,.14));border-bottom:1px solid var(--line);overflow:hidden}
+.ticker-track{display:flex;gap:56px;white-space:nowrap;padding:8px 0;animation:slide 34s linear infinite;font-size:.84rem;color:#dbe7ff;font-weight:600}
+.ticker-track span b{color:var(--marigold);font-weight:700}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker:hover .ticker-track{animation-play-state:paused}
+
+/* ---------- header ---------- */
+.hdr{position:sticky;top:0;z-index:55;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(5,9,22,.78);border-bottom:1px solid var(--line)}
+.hdr-in{display:flex;align-items:center;gap:18px;height:70px}
+.brand{display:flex;align-items:center;gap:11px;cursor:pointer;background:none;border:0;padding:0}
+.emblem{width:38px;height:38px;flex:0 0 38px;filter:drop-shadow(0 0 10px rgba(37,215,240,.55))}
+.brandname{font-size:1.02rem;font-weight:800;color:#fff;line-height:1.05}
+.brandname small{display:block;font-family:"Manrope";font-size:.62rem;letter-spacing:.28em;color:var(--muted-2);font-weight:600;margin-top:3px}
+.nav{display:flex;gap:2px;margin-left:auto;align-items:center}
+.nav a{padding:9px 13px;border-radius:999px;color:#c8d6f5;font-size:.9rem;font-weight:600;transition:background .18s,color .18s}
+.nav a:hover{background:rgba(88,150,255,.14);color:#fff}
+.nav a.on{color:#fff;background:rgba(37,215,240,.16);box-shadow:inset 0 0 0 1px var(--line-strong)}
+.hdr-cta{display:flex;align-items:center;gap:10px;margin-left:12px}
+.burger{display:none;width:44px;height:40px;border-radius:12px;background:var(--glass);border:1px solid var(--line);align-items:center;justify-content:center;cursor:pointer}
+.burger span{display:block;width:19px;height:2px;background:#fff;box-shadow:0 -6px 0 #fff,0 6px 0 #fff;border-radius:2px}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(86vw,340px);background:linear-gradient(180deg,#070d20,#04060f);border-left:1px solid var(--line);z-index:70;transform:translateX(102%);transition:transform .34s cubic-bezier(.4,0,.2,1);padding:22px 18px;overflow-y:auto}
+.drawer.open{transform:none}
+.drawer a{display:block;padding:14px 12px;border-radius:12px;color:#dbe6ff;font-weight:600;border-bottom:1px solid rgba(255,255,255,.05)}
+.drawer a:hover{background:rgba(88,150,255,.12)}
+.scrim{position:fixed;inset:0;background:rgba(2,4,10,.72);backdrop-filter:blur(3px);z-index:65;opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.on{opacity:1;pointer-events:auto}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 22px;border-radius:999px;border:1px solid transparent;font-weight:700;font-size:.93rem;cursor:pointer;transition:transform .16s,box-shadow .22s,background .2s;background:var(--glass);color:#fff;text-align:center}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn-primary{background:linear-gradient(120deg,var(--cyan),var(--sapphire));color:#04121f;box-shadow:0 10px 30px rgba(45,140,255,.42), inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-primary:hover{box-shadow:0 16px 42px rgba(45,170,255,.6)}
+.btn-ghost{border-color:var(--line-strong);background:rgba(20,36,76,.5);color:#e6efff}
+.btn-gold{background:linear-gradient(120deg,#ffd97a,#f0a93c);color:#2a1a00;box-shadow:0 10px 26px rgba(240,170,60,.34)}
+.btn-sm{padding:9px 16px;font-size:.85rem}
+.btn-block{width:100%}
+.btn[disabled],.btn.sold{background:rgba(120,134,168,.16)!important;color:var(--muted-2)!important;border-color:rgba(255,255,255,.07)!important;cursor:not-allowed;box-shadow:none!important;transform:none!important}
+
+/* ---------- glass cards ---------- */
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:var(--r-lg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:var(--shadow)}
+
+/* ---------- featured banner ---------- */
+.banner{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--line-strong);box-shadow:0 30px 80px rgba(0,0,0,.6);margin-top:26px}
+.slides{position:relative;aspect-ratio:8/3;min-height:300px}
+@media(max-width:820px){.slides{aspect-ratio:3/4;min-height:400px}}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .75s ease;display:flex;align-items:flex-end}
+.slide.on{opacity:1}
+.slide-art{position:absolute;inset:0}
+.slide-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,6,16,.94) 8%,rgba(3,6,16,.66) 46%,rgba(3,6,16,.22) 100%)}
+@media(max-width:820px){.slide-shade{background:linear-gradient(0deg,rgba(3,6,16,.96) 30%,rgba(3,6,16,.4) 100%)}}
+.slide-body{position:relative;padding:clamp(22px,4vw,52px);max-width:640px}
+.pill{display:inline-flex;align-items:center;gap:7px;padding:6px 13px;border-radius:999px;background:rgba(37,215,240,.14);border:1px solid var(--line-strong);font-size:.75rem;font-weight:700;color:#bff2ff;margin-bottom:14px}
+.pill.gold{background:rgba(247,198,90,.16);border-color:rgba(247,198,90,.4);color:#ffe0a3}
+.slide-body h2{font-size:clamp(1.7rem,4.2vw,3rem);font-weight:800;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.slide-meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin:14px 0 18px;color:#c2d3f5;font-size:.9rem;font-weight:600}
+.slide-price{font-family:"Sora";font-weight:800;font-size:1.25rem;color:var(--marigold)}
+.b-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(8,16,36,.72);border:1px solid var(--line-strong);color:#fff;font-size:1.2rem;cursor:pointer;display:grid;place-items:center;z-index:4;backdrop-filter:blur(6px)}
+.b-arrow:hover{background:rgba(37,215,240,.28)}
+.b-prev{left:14px}.b-next{right:14px}
+.dots{position:absolute;bottom:16px;right:20px;display:flex;gap:8px;z-index:4}
+.dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.3);border:0;cursor:pointer;padding:0;transition:width .25s,background .25s}
+.dot.on{width:26px;border-radius:999px;background:var(--cyan)}
+@media(max-width:820px){.dots{left:20px;right:auto;bottom:14px}.b-arrow{top:auto;bottom:12px;transform:none}.b-prev{left:auto;right:66px}.b-next{right:16px}}
+
+/* ---------- hero strip ---------- */
+.hero-line{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;padding-top:40px}
+.hero-line h1{max-width:16ch}
+.hero-line .sub{max-width:44ch;font-size:1.02rem;margin-top:14px}
+.stats{display:flex;gap:30px;flex-wrap:wrap}
+.stat .num{font-size:1.7rem;font-weight:800;color:#fff}
+.stat small{color:var(--muted-2);font-size:.8rem;font-weight:600}
+
+/* ---------- event cards ---------- */
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{position:relative;border-radius:var(--r-lg);overflow:hidden;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(14px);display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--line-strong);box-shadow:0 22px 50px rgba(10,30,80,.5)}
+.card-art{position:relative;aspect-ratio:2/3;overflow:hidden}
+.card-art img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;top:12px;left:12px;padding:5px 11px;border-radius:999px;font-size:.72rem;font-weight:700;background:rgba(4,8,20,.74);border:1px solid var(--line-strong);color:#bff2ff;backdrop-filter:blur(6px)}
+.badge.rate{left:auto;right:12px;color:#ffe0a3;border-color:rgba(247,198,90,.42)}
+.card-body{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card-body h3{color:#fff}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.84rem;color:var(--muted);font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:.7rem;font-weight:700;padding:4px 9px;border-radius:7px;background:rgba(59,116,255,.14);border:1px solid var(--line);color:#b9cdf5}
+.cap{margin-top:auto}
+.bar{height:6px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;margin:8px 0 6px}
+.bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--sapphire))}
+.bar i.hot{background:linear-gradient(90deg,#ffb347,#ff5f6d)}
+.cap small{font-size:.76rem;color:var(--muted-2);font-weight:600}
+.price-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:4px}
+.price-row .from{font-size:.74rem;color:var(--muted-2);font-weight:600;display:block}
+.price-row .amt{font-family:"Sora";font-weight:800;font-size:1.3rem;color:#fff}
+.card.isold .card-art{filter:grayscale(.85) brightness(.55)}
+
+/* ---------- services ---------- */
+.svc-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(255px,1fr))}
+.svc{padding:24px;border-radius:var(--r-lg);background:linear-gradient(160deg,rgba(24,40,88,.6),rgba(9,15,34,.6));border:1px solid var(--line)}
+.svc:hover{border-color:var(--line-strong)}
+.svc .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(37,215,240,.22),rgba(59,116,255,.3));border:1px solid var(--line-strong);margin-bottom:14px}
+.svc h3{margin-bottom:8px;color:#fff}
+.svc p{font-size:.92rem;margin:0}
+.svc ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:.87rem}
+.svc li{margin-bottom:5px}
+
+/* ---------- forms ---------- */
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.83rem;font-weight:700;color:#c7d6f6;margin-bottom:6px}
+.inp{width:100%;padding:12px 14px;border-radius:12px;background:rgba(6,12,28,.75);border:1px solid var(--line);color:#fff;transition:border-color .18s,box-shadow .18s}
+.inp:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(37,215,240,.18);outline:none}
+.inp::placeholder{color:#5f709a}
+textarea.inp{min-height:110px;resize:vertical}
+select.inp{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#8aa2d4 50%),linear-gradient(135deg,#8aa2d4 50%,transparent 50%);background-position:calc(100% - 20px) calc(50% + 2px),calc(100% - 15px) calc(50% + 2px);background-size:5px 5px;background-repeat:no-repeat}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.two{grid-template-columns:1fr}}
+.err{color:var(--danger);font-size:.8rem;margin-top:5px;font-weight:600;display:none}
+.err.on{display:block}
+
+/* ---------- modal ---------- */
+.modal{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;padding:18px}
+.modal.on{display:flex}
+.modal-bg{position:absolute;inset:0;background:rgba(2,4,12,.8);backdrop-filter:blur(8px)}
+.modal-box{position:relative;width:min(640px,100%);max-height:92vh;overflow-y:auto;background:linear-gradient(170deg,rgba(16,28,62,.97),rgba(6,10,26,.99));border:1px solid var(--line-strong);border-radius:24px;box-shadow:0 40px 100px rgba(0,0,0,.7);animation:pop .28s cubic-bezier(.2,.9,.3,1.2)}
+.modal-box.wide{width:min(1020px,100%)}
+@keyframes pop{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+.modal-hd{display:flex;align-items:center;gap:12px;padding:18px 22px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(8,14,32,.96);backdrop-filter:blur(10px);z-index:3;border-radius:24px 24px 0 0}
+.modal-hd h3{flex:1;color:#fff}
+.x{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid var(--line);color:#fff;cursor:pointer;font-size:1.05rem}
+.x:hover{background:rgba(255,107,129,.22)}
+.modal-bd{padding:22px}
+.steps{display:flex;gap:6px;padding:0 22px 16px}
+.step{flex:1;height:4px;border-radius:99px;background:rgba(255,255,255,.1)}
+.step.on{background:linear-gradient(90deg,var(--cyan),var(--sapphire))}
+
+/* ---------- pass picker ---------- */
+.pass{display:flex;align-items:center;gap:14px;padding:14px;border-radius:14px;border:1px solid var(--line);background:rgba(8,15,34,.6);cursor:pointer;margin-bottom:10px;transition:border-color .18s,background .18s}
+.pass:hover{border-color:var(--line-strong)}
+.pass.on{border-color:var(--cyan);background:rgba(37,215,240,.12);box-shadow:0 0 0 3px rgba(37,215,240,.13)}
+.pass .nm{font-weight:700;color:#fff}
+.pass .ds{font-size:.82rem;color:var(--muted)}
+.pass .pr{margin-left:auto;font-family:"Sora";font-weight:800;font-size:1.1rem;color:var(--marigold);white-space:nowrap}
+.qty{display:flex;align-items:center;gap:14px;padding:14px;border-radius:14px;border:1px solid var(--line);background:rgba(8,15,34,.6)}
+.qty button{width:38px;height:38px;border-radius:10px;background:rgba(59,116,255,.2);border:1px solid var(--line-strong);color:#fff;font-size:1.2rem;cursor:pointer}
+.qty b{font-family:"Sora";font-size:1.2rem;min-width:26px;text-align:center}
+.total{display:flex;justify-content:space-between;align-items:center;padding:16px;border-radius:14px;background:linear-gradient(120deg,rgba(37,215,240,.14),rgba(59,116,255,.16));border:1px solid var(--line-strong);margin:16px 0}
+.total .amt{font-family:"Sora";font-size:1.5rem;font-weight:800;color:#fff}
+
+/* ---------- pass ticket ---------- */
+.ticket{border-radius:20px;overflow:hidden;border:1px solid var(--line-strong);background:linear-gradient(160deg,#0f1c42,#070d20)}
+.ticket-top{padding:18px 20px;background:linear-gradient(120deg,rgba(37,215,240,.2),rgba(59,116,255,.24));border-bottom:1px dashed rgba(160,210,255,.35);display:flex;align-items:center;gap:12px}
+.ticket-top h3{color:#fff;font-size:1.05rem;flex:1}
+.ticket-mid{display:flex;gap:18px;padding:20px;flex-wrap:wrap}
+.qrbox{width:150px;height:150px;background:#fff;border-radius:14px;padding:10px;display:grid;place-items:center;flex:0 0 auto}
+.qrbox img,.qrbox canvas{width:100%!important;height:100%!important}
+.tinfo{flex:1;min-width:190px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tinfo div small{display:block;font-size:.7rem;color:var(--muted-2);font-weight:700;margin-bottom:2px}
+.tinfo div b{font-size:.92rem;color:#fff;font-weight:700;word-break:break-word}
+.ticket-bot{padding:12px 20px;border-top:1px dashed rgba(160,210,255,.28);font-size:.75rem;color:var(--muted-2)}
+
+/* ---------- admin ---------- */
+.adm-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.adm-tab{padding:9px 16px;border-radius:999px;background:rgba(20,34,72,.6);border:1px solid var(--line);color:#c4d4f5;font-weight:700;font-size:.86rem;cursor:pointer}
+.adm-tab.on{background:linear-gradient(120deg,var(--cyan),var(--sapphire));color:#04121f;border-color:transparent}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px;border-radius:12px;border:1px solid var(--line);background:rgba(8,14,32,.55);margin-bottom:10px}
+.row .grow{flex:1;min-width:130px}
+.tbl{width:100%;border-collapse:collapse;font-size:.85rem}
+.tbl th,.tbl td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--line)}
+.tbl th{color:var(--muted-2);font-size:.75rem;font-weight:700}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.fab{position:fixed;right:16px;bottom:16px;z-index:50;width:52px;height:52px;border-radius:50%;background:rgba(10,18,42,.9);border:1px solid var(--line-strong);color:#9fd7ff;cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(10px);box-shadow:var(--shadow)}
+.fab:hover{background:rgba(37,215,240,.25);color:#fff}
+
+/* ---------- legal / prose ---------- */
+.prose{max-width:74ch}
+.prose h2{margin:34px 0 12px;color:#fff}
+.prose h3{margin:24px 0 8px;color:#dce8ff}
+.prose ul,.prose ol{color:var(--muted);padding-left:20px}
+.prose li{margin-bottom:7px}
+.note{padding:16px 18px;border-radius:14px;border:1px solid rgba(255,107,129,.32);background:rgba(255,107,129,.08);color:#ffd7dd;font-size:.92rem;margin:18px 0}
+.note.info{border-color:var(--line-strong);background:rgba(37,215,240,.09);color:#cfeaff}
+.acc{border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden;background:rgba(10,18,42,.5)}
+.acc summary{padding:15px 18px;cursor:pointer;font-weight:700;color:#e6efff;list-style:none;display:flex;gap:10px;align-items:center}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";margin-left:auto;color:var(--cyan);font-size:1.25rem;font-weight:700}
+.acc[open] summary::after{content:"−"}
+.acc .in{padding:0 18px 16px;color:var(--muted);font-size:.93rem}
+
+/* ---------- cropper (manual box) ---------- */
+.crop-frame{position:relative;overflow:hidden;background:#000;border-radius:14px;margin-inline:auto;touch-action:none;border:1px solid var(--line-strong);max-width:100%}
+.crop-frame img{display:block;width:100%;height:auto;-webkit-user-drag:none;user-select:none;pointer-events:none}
+.crop-box{position:absolute;border:2px solid var(--cyan);box-shadow:0 0 0 2000px rgba(0,0,0,.62);cursor:move;touch-action:none}
+.crop-box::before{content:"";position:absolute;inset:0;background:
+   linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px) 0 33.33%/100% 33.34% no-repeat,
+   linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px) 0 66.66%/100% 33.34% no-repeat,
+   linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px) 33.33% 0/33.34% 100% no-repeat,
+   linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px) 66.66% 0/33.34% 100% no-repeat;
+   pointer-events:none}
+.crop-h{position:absolute;width:18px;height:18px;background:#fff;border:2px solid var(--cyan);border-radius:5px;z-index:2}
+.crop-h[data-h=nw]{left:-9px;top:-9px;cursor:nwse-resize}
+.crop-h[data-h=ne]{right:-9px;top:-9px;cursor:nesw-resize}
+.crop-h[data-h=sw]{left:-9px;bottom:-9px;cursor:nesw-resize}
+.crop-h[data-h=se]{right:-9px;bottom:-9px;cursor:nwse-resize}
+.crop-ctrl{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+.emblem-img{width:38px;height:38px;object-fit:cover;border-radius:10px;border:1px solid var(--line-strong)}
+
+/* ---------- partner marquee ---------- */
+.partner-strip{border-top:1px solid var(--line);padding-top:26px;margin-top:32px}
+.partner-strip h4{font-size:.8rem;color:var(--muted-2);margin-bottom:14px;letter-spacing:.04em}
+.partner-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.partner-track{display:flex;gap:36px;width:max-content;animation:pslide 32s linear infinite}
+.partner-marquee:hover .partner-track{animation-play-state:paused}
+@keyframes pslide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.partner-item{display:flex;align-items:center;gap:8px;flex:0 0 auto;padding:8px 16px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid var(--line);opacity:.85}
+.partner-item img{width:28px;height:28px;object-fit:contain;border-radius:6px}
+.partner-item span{font-size:.8rem;font-weight:700;color:#cfdcf7;white-space:nowrap}
+
+/* ---------- squad builder ---------- */
+.squad-opt{display:flex;gap:12px;flex-wrap:wrap}
+.squad-opt .btn{flex:1;min-width:140px}
+.squad-link-box{display:flex;gap:8px;align-items:center;padding:12px 14px;border-radius:12px;border:1px solid var(--line-strong);background:rgba(37,215,240,.08);font-size:.85rem;overflow-wrap:anywhere}
+.squad-members{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+
+/* ---------- squad access card & gate scanner ---------- */
+.btn-squad{background:linear-gradient(120deg,var(--purple),var(--sapphire));color:#fff;box-shadow:0 0 0 1px rgba(176,107,255,.4),0 10px 30px rgba(176,107,255,.42),inset 0 1px 0 rgba(255,255,255,.3)}
+.btn-squad:hover{box-shadow:0 0 0 1px rgba(176,107,255,.6),0 16px 42px rgba(176,107,255,.6)}
+.access-card{width:100%;max-width:300px;aspect-ratio:9/16;margin-inline:auto;border-radius:22px;background:linear-gradient(165deg,#1a1140,#0d1a3e 55%,#04060f);border:1px solid rgba(176,107,255,.5);box-shadow:0 0 0 1px rgba(176,107,255,.22),0 20px 60px rgba(90,40,200,.35);padding:22px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;position:relative;overflow:hidden}
+.access-card::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 60% at 50% 0%,rgba(176,107,255,.25),transparent 60%);pointer-events:none}
+.ac-top{font-family:Sora;font-weight:800;font-size:.76rem;letter-spacing:.08em;color:#c9a9ff;position:relative}
+.ac-qr{width:130px;height:130px;background:#fff;border-radius:12px;padding:8px;margin-top:6px;position:relative}
+.ac-qr canvas,.ac-qr img{width:100%!important;height:100%!important}
+.ac-squad{font-family:Sora;font-weight:800;font-size:1.1rem;color:#fff;margin-top:8px;position:relative}
+.ac-meta{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;font-size:.76rem;color:#cdb8ff;font-weight:700;position:relative}
+.ac-token{font-family:monospace;font-size:.68rem;color:#8ef0ff;word-break:break-all;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,.06);margin-top:4px;position:relative}
+.ac-foot{font-size:.66rem;color:var(--muted-2);margin-top:auto;position:relative}
+.gate-panel{border-radius:20px;padding:36px 20px;text-align:center}
+.gate-ok{background:linear-gradient(160deg,rgba(61,220,151,.25),rgba(6,20,14,.9));border:1px solid rgba(61,220,151,.5)}
+.gate-dupe{background:linear-gradient(160deg,rgba(255,107,129,.28),rgba(30,6,10,.9));border:1px solid rgba(255,107,129,.55)}
+.gate-bad{background:linear-gradient(160deg,rgba(255,107,129,.15),rgba(20,10,10,.9));border:1px solid rgba(255,107,129,.3)}
+.gate-big{font-family:Sora;font-weight:800;font-size:1.5rem;margin-bottom:8px}
+
+/* ---------- footer ---------- */
+.ftr{border-top:1px solid var(--line);background:rgba(4,7,18,.7);margin-top:50px;padding:46px 0 26px}
+.ftr-grid{display:grid;gap:30px;grid-template-columns:1.5fr 1fr 1fr 1fr}
+@media(max-width:860px){.ftr-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.ftr-grid{grid-template-columns:1fr}}
+.ftr h4{font-size:.8rem;color:#fff;margin-bottom:12px;font-weight:700;letter-spacing:.04em}
+.ftr a{display:block;color:var(--muted);font-size:.88rem;padding:4px 0}
+.ftr a:hover{color:var(--cyan)}
+.ftr-bot{margin-top:32px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.8rem;color:var(--muted-2)}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,120%);background:linear-gradient(120deg,#0e2050,#0a1638);border:1px solid var(--line-strong);padding:13px 20px;border-radius:14px;z-index:120;box-shadow:var(--shadow);transition:transform .35s cubic-bezier(.2,.9,.3,1.2);font-weight:600;font-size:.9rem;max-width:90vw}
+.toast.on{transform:translate(-50%,0)}
+.center{text-align:center}
+.mt{margin-top:18px}
+.hide{display:none!important}
+@media(max-width:1020px){
+  .nav{display:none}
+  .burger{display:flex}
+  .hdr-cta .btn-book{display:none}
+  .hdr-cta .btn-squadcta{display:none}
+}
+</style>
+</head>
+<body>
+<canvas class="starfield" id="stars" aria-hidden="true"></canvas>
+
+<div class="ticker" id="ticker"><div class="ticker-track" id="tickerTrack"></div></div>
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <button class="brand" onclick="go('home')" aria-label="Mars Nova Global home">
+      <span id="emblemSlot"><svg class="emblem" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="21" stroke="url(#g1)" stroke-width="1.4" opacity=".5"/>
+        <ellipse cx="24" cy="24" rx="21" ry="8" stroke="url(#g1)" stroke-width="1.2" opacity=".55" transform="rotate(-24 24 24)"/>
+        <circle cx="24" cy="24" r="8.5" fill="url(#g2)"/>
+        <path d="M24 4.5l2.4 6.6 6.6 2.4-6.6 2.4L24 22.5l-2.4-6.6-6.6-2.4 6.6-2.4z" fill="#fff" opacity=".95"/>
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#25d7f0"/><stop offset="1" stop-color="#3b74ff"/></linearGradient>
+          <radialGradient id="g2"><stop stop-color="#7ef0ff"/><stop offset="1" stop-color="#2f5cff"/></radialGradient>
+        </defs>
+      </svg></span>
+      <span class="brandname">MARS NOVA GLOBAL<small>SURAT</small></span>
+    </button>
+    <nav class="nav" id="nav"></nav>
+    <div class="hdr-cta">
+      <button class="btn btn-squad btn-sm btn-squadcta" onclick="openSquadBuilder()">✦ Book Your Squad</button>
+      <button class="btn btn-primary btn-sm btn-book" onclick="openBooking()">Book now</button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="scrim" id="scrim" onclick="closeDrawer()"></div>
+<aside class="drawer" id="drawer" aria-label="Mobile menu">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+    <strong style="font-family:Sora">Menu</strong>
+    <button class="x" onclick="closeDrawer()" aria-label="Close menu">✕</button>
+  </div>
+  <div id="drawerNav"></div>
+  <button class="btn btn-squad btn-block mt" onclick="closeDrawer();openSquadBuilder()">✦ Book Your Squad</button>
+  <button class="btn btn-primary btn-block mt" onclick="closeDrawer();openBooking()">Book now</button>
+</aside>
+
+<main class="page" id="app"></main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <div class="brandname" style="font-size:1rem">MARS NOVA GLOBAL</div>
+        <p style="font-size:.9rem;margin-top:12px;max-width:34ch">Festival ticketing and full-stack event execution out of Surat — artists, direction, vendors and ground operations under one roof.</p>
+        <p style="font-size:.88rem;margin:0">
+          <a href="tel:+917096052070">+91 70960 52070</a><br>
+          <a href="mailto:marsnovaglobal@gmail.com">marsnovaglobal@gmail.com</a>
+        </p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#/about">About us</a>
+        <a href="#/contact">Contact us</a>
+        <a href="#/services">Services</a>
+        <a href="#/blog">Blog</a>
+        <a href="#/logo">Logo centre</a>
+      </div>
+      <div>
+        <h4>Book</h4>
+        <a href="#/venues">Venues</a>
+        <a href="#/passes">My passes</a>
+        <a href="javascript:void(0)" onclick="openRecover()">Recover my pass</a>
+        <a href="#/faqs">FAQs</a>
+        <a href="#/contact">Organiser enquiry</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="#/terms">Terms and conditions</a>
+        <a href="#/privacy">Privacy policy</a>
+        <a href="#/refund">Refund policy</a>
+        <a href="#/organizer">Organiser terms</a>
+      </div>
+    </div>
+    <div class="partner-strip" id="partnerStrip">
+      <h4>Partners & organisers we work with</h4>
+      <div class="partner-marquee"><div class="partner-track" id="partnerTrack"></div></div>
+    </div>
+    <div class="ftr-bot">
+      <span>© <span id="yr"></span> Mars Nova Global. All rights reserved.</span>
+      <span>Passes are non-refundable · One scan, one entry</span>
+    </div>
+  </div>
+</footer>
+
+<!-- booking modal -->
+<div class="modal" id="bookModal" role="dialog" aria-modal="true" aria-labelledby="bkTitle">
+  <div class="modal-bg" onclick="closeBooking()"></div>
+  <div class="modal-box">
+    <div class="modal-hd"><h3 id="bkTitle">Book your pass</h3><button class="x" onclick="closeBooking()" aria-label="Close">✕</button></div>
+    <div class="steps" id="bkSteps"></div>
+    <div class="modal-bd" id="bkBody"></div>
+  </div>
+</div>
+
+<!-- admin modal -->
+<div class="modal" id="admModal" role="dialog" aria-modal="true" aria-labelledby="admTitle">
+  <div class="modal-bg" onclick="closeAdmin()"></div>
+  <div class="modal-box wide">
+    <div class="modal-hd"><h3 id="admTitle">Admin panel</h3><button class="x" onclick="closeAdmin()" aria-label="Close">✕</button></div>
+    <div class="modal-bd" id="admBody"></div>
+  </div>
+</div>
+
+<!-- crop modal -->
+<div class="modal" id="cropModal" role="dialog" aria-modal="true" aria-labelledby="cropTitle">
+  <div class="modal-bg" onclick="cancelCrop()"></div>
+  <div class="modal-box">
+    <div class="modal-hd"><h3 id="cropTitle">Position the image</h3><button class="x" onclick="cancelCrop()" aria-label="Close">✕</button></div>
+    <div class="modal-bd">
+      <p style="font-size:.88rem;margin-top:0">Drag the box to reposition it, drag a corner to resize it. Everything outside the box is what gets trimmed.</p>
+      <div class="crop-frame" id="cropFrame">
+        <img id="cropImg" alt="Image to crop">
+        <div class="crop-box" id="cropBox">
+          <span class="crop-h" data-h="nw"></span>
+          <span class="crop-h" data-h="ne"></span>
+          <span class="crop-h" data-h="sw"></span>
+          <span class="crop-h" data-h="se"></span>
+        </div>
+      </div>
+      <div class="crop-ctrl">
+        <span style="font-size:.8rem;color:var(--muted-2)">Aspect ratio is locked to fit</span>
+        <button class="btn btn-ghost btn-sm" onclick="centerCropBox()">Re-centre</button>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:18px">
+        <button class="btn btn-ghost" onclick="cancelCrop()">Cancel</button>
+        <button class="btn btn-primary" style="flex:1" onclick="applyCrop()">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- recover pass modal -->
+<div class="modal" id="recoverModal" role="dialog" aria-modal="true" aria-labelledby="recoverTitle">
+  <div class="modal-bg" onclick="closeRecover()"></div>
+  <div class="modal-box">
+    <div class="modal-hd"><h3 id="recoverTitle">Recover my pass</h3><button class="x" onclick="closeRecover()" aria-label="Close">✕</button></div>
+    <div class="modal-bd">
+      <p style="font-size:.9rem;margin-top:0">Lost the tab, or the pass never showed up? Enter the email or WhatsApp number you booked with and we'll pull it back up.</p>
+      <div class="field"><label for="recQuery">Email or WhatsApp number</label><input id="recQuery" class="inp" placeholder="you@example.com or 98XXXXXXXX" onkeypress="if(event.key==='Enter')recoverLookup()"></div>
+      <div class="err" id="recErr"></div>
+      <button class="btn btn-primary btn-block" onclick="recoverLookup()">Find my pass</button>
+      <div id="recoverResults" class="mt"></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- custom confirm/prompt (replaces native confirm()/prompt() which can be blocked in embedded previews) -->
+<div class="modal" id="askModal" role="dialog" aria-modal="true" aria-labelledby="askTitle">
+  <div class="modal-bg" onclick="closeAsk(true)"></div>
+  <div class="modal-box" style="max-width:420px">
+    <div class="modal-hd"><h3 id="askTitle">Please confirm</h3><button class="x" onclick="closeAsk(true)" aria-label="Close">✕</button></div>
+    <div class="modal-bd">
+      <p id="askMsg" style="margin-top:0"></p>
+      <div class="field" id="askInputWrap" style="display:none"><input id="askInput" class="inp" onkeypress="if(event.key==='Enter')closeAsk(false)"></div>
+      <div style="display:flex;gap:10px;margin-top:6px">
+        <button class="btn btn-ghost" onclick="closeAsk(true)">Cancel</button>
+        <button class="btn btn-primary" style="flex:1" id="askOkBtn" onclick="closeAsk(false)">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   MARS NOVA GLOBAL — data layer
+   Storage: browser localStorage (per device).
+   To sync with Google Sheets / Excel, fill SHEET_WEBHOOK below.
+   ============================================================ */
+var SHEET_WEBHOOK = ""; // e.g. a Google Apps Script /exec URL. Empty = offline only.
+var BACKEND_URL = "https://mng-backend-production.up.railway.app"; // your live backend. Leave "" to fall back to demo payment.
+
+function pushToSheet(kind, row){
+  if(!SHEET_WEBHOOK) return;
+  try{
+    fetch(SHEET_WEBHOOK,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},
+      body:JSON.stringify({type:kind,payload:row,at:new Date().toISOString()})});
+  }catch(e){}
+}
+
+var KEY="mng_site_v1";
+var ART=[
+  ["#132a6b","#25d7f0","#f7c65a"],["#3a1160","#b06bff","#ffd27a"],
+  ["#07394a","#25f0c4","#7ee8ff"],["#4a1030","#ff7aa2","#ffd27a"],
+  ["#0d2350","#5b8cff","#a8ffe8"],["#3d2a08","#f7c65a","#ff9b5a"]
+];
+
+function defaults(){
+  return {
+    settings:{
+      pin:"2026",
+      ticker:"Surat Navratri 2026 passes are live · Season passes closing fast · Stag from ₹399 · Gate opens 7:30 PM daily",
+      phone:"+91 70960 52070", email:"marsnovaglobal@gmail.com",
+      logo:null, razorpayKeyId:"", resellerEndpoint:"", resellerNote:""
+    },
+    agents:[],
+    partners:[
+      {id:"p1",name:"Beat Drop Productions",img:""},{id:"p2",name:"Suryam Sound & Light",img:""},
+      {id:"p3",name:"Kesar Caterers",img:""},{id:"p4",name:"Vraj Decor Co.",img:""},
+      {id:"p5",name:"Tapovan Security",img:""},{id:"p6",name:"Anmol Event Vendors",img:""},
+      {id:"p7",name:"Diu Dhol Troupe",img:""},{id:"p8",name:"Reva Media Partners",img:""}
+    ],
+    posts:[
+      {id:"bp1",title:"Planning a nine-night ground: the numbers that actually matter",
+       excerpt:"Capacity, gate throughput and vendor lead times decide your season long before the line-up does.",
+       body:"Capacity, gate throughput and vendor lead times decide your season long before the line-up does.\n\nMost organisers start with the artist and work backwards. We start with the gate: how many people can actually scan through in the first hour, how wide the exits are, and how long the food street queue gets at peak. Get those numbers wrong and the best line-up in Gujarat won't save the night.\n\nA rough rule we use: budget one scan lane per 800 expected guests in the first hour, and always walk the ground at the exact time of day the event will run, not during a quiet afternoon site visit.",
+       art:0,img:"",date:"2026-08-02"},
+      {id:"bp2",title:"Why QR entry beats paper passes at 4,000 footfall",
+       excerpt:"A scan lane clears roughly four times faster than a manual check, and duplicates stop at the gate.",
+       body:"A scan lane clears roughly four times faster than a manual check, and duplicates stop dead at the gate instead of causing an argument at 9pm.\n\nPaper passes fail in three predictable ways: they get photocopied, they get shared inside a friend group, and they slow down the one thing you can't afford to slow down — the queue. A QR code that's marked used the instant it's scanned closes all three problems at once.\n\nThe trade-off is that your device fleet and your internet connection at the gate now matter as much as your barricades do.",
+       art:2,img:"",date:"2026-07-18"},
+      {id:"bp3",title:"Booking a garba artist: what a rider really costs",
+       excerpt:"Travel, stay, backline and green room usually add a third on top of the quoted fee.",
+       body:"Travel, stay, backline and green room usually add a third on top of the quoted performance fee, and it's the line item first-time organisers miss.\n\nA typical rider covers flights or a driven car, a certain grade of hotel room, a backline spec (amps, monitors, a specific console), and green room catering. None of that is padding — it's what keeps a touring artist able to perform two shows in two cities on back-to-back nights.\n\nAsk for the full rider before you quote a client, not after you've already promised a number.",
+       art:4,img:"",date:"2026-06-30"},
+      {id:"bp4",title:"Crowd flow: designing exits before you design the stage",
+       excerpt:"Exit width, parking spill and the medical point should be fixed on the drawing, not on night one.",
+       body:"Exit width, parking spill and the medical point should be fixed on the ground drawing, not discovered on night one when 4,000 people decide to leave at the same time.\n\nA good layout treats the exit like the main stage — it gets measured, it gets a width calculation based on expected footfall, and it gets tested at a walk-through before doors open. The stage is what people came for; the exit is what keeps them safe leaving.\n\nWe run every ground through the same checklist: exit width against footfall, parking flow against the road outside, and a medical point that's reachable from anywhere on the floor in under two minutes.",
+       art:5,img:"",date:"2026-06-10"}
+    ],
+    squads:{},
+    guestlist:[],
+    featured:[
+      {id:"f1",title:"Navratri Nights 2026 — Vesu Mega Ground",kicker:"Featured · 9 nights",sub:"Live dhol, three stages and Surat's biggest garba floor.",date:"10–18 Oct 2026",place:"Vesu, Surat",price:"From ₹399",art:0,link:"e1"},
+      {id:"f2",title:"Golden Garba by the Riverfront",kicker:"Promoted",sub:"Open-air riverside floor with a 40-piece live orchestra.",date:"10–18 Oct 2026",place:"Pal Riverfront, Surat",price:"From ₹499",art:3,link:"e2"},
+      {id:"f3",title:"Season Pass — all nine nights",kicker:"Best value",sub:"One pass, every night, priority gate lane.",date:"Limited quantity",place:"All MNG grounds",price:"₹4,999",art:5,link:"e1"}
+    ],
+    events:[
+      {id:"e1",name:"Vesu Mega Ground",place:"Vesu, Surat",date:"10–18 Oct 2026",time:"7:30 PM – 1:00 AM",rating:4.8,
+       desc:"Surat's largest covered garba floor with three stages, a live dhol arena and a dedicated food street.",
+       tags:["Garba","Live artist","Food street"],art:0,capacity:6000,sold:4380,manualSold:false,img:"",
+       passes:[{n:"Stag",p:399,d:"Single entry, one night"},{n:"Couple",p:699,d:"Two entries, one night"},{n:"VIP",p:1499,d:"Front floor + VIP lounge"},{n:"Season pass",p:4999,d:"All nine nights"}]},
+      {id:"e2",name:"Pal Riverfront Grounds",place:"Pal, Surat",date:"10–18 Oct 2026",time:"8:00 PM – 1:00 AM",rating:4.7,
+       desc:"Open-air riverside floor with a live orchestra, ambient lighting and a raised viewing deck.",
+       tags:["Open air","Live orchestra"],art:3,capacity:4000,sold:2110,manualSold:false,img:"",
+       passes:[{n:"Stag",p:499,d:"Single entry, one night"},{n:"Couple",p:849,d:"Two entries, one night"},{n:"VIP",p:1799,d:"Deck seating + lounge"},{n:"Season pass",p:5499,d:"All nine nights"}]},
+      {id:"e3",name:"Adajan Sports Complex",place:"Adajan, Surat",date:"10–18 Oct 2026",time:"7:30 PM – 12:30 AM",rating:4.6,
+       desc:"Family-first ground with a wide floor, seated gallery and a separate kids' garba zone.",
+       tags:["Family","Seated gallery","Kids zone"],art:2,capacity:3000,sold:3000,manualSold:false,img:"",
+       passes:[{n:"Stag",p:399,d:"Single entry, one night"},{n:"Couple",p:649,d:"Two entries, one night"},{n:"VIP",p:1299,d:"Gallery + lounge"},{n:"Season pass",p:4299,d:"All nine nights"}]},
+      {id:"e4",name:"Athwalines Indoor Arena",place:"Athwalines, Surat",date:"10–18 Oct 2026",time:"8:00 PM – 1:00 AM",rating:4.5,
+       desc:"Fully air-conditioned indoor arena with a themed cosmic light rig and a late-night DJ hour.",
+       tags:["Indoor","Air conditioned","DJ hour"],art:1,capacity:2500,sold:900,manualSold:false,img:"",
+       passes:[{n:"Stag",p:599,d:"Single entry, one night"},{n:"Couple",p:999,d:"Two entries, one night"},{n:"VIP",p:1999,d:"Ringside + lounge"},{n:"Season pass",p:6499,d:"All nine nights"}]},
+      {id:"e5",name:"Dumas Road Open Ground",place:"Dumas Road, Surat",date:"12–18 Oct 2026",time:"8:00 PM – 1:00 AM",rating:4.4,
+       desc:"Late-opening ground built around a central dandiya circle and an artist meet-and-greet stage.",
+       tags:["Dandiya circle","Meet the artist"],art:4,capacity:3500,sold:1240,manualSold:false,img:"",
+       passes:[{n:"Stag",p:449,d:"Single entry, one night"},{n:"Couple",p:749,d:"Two entries, one night"},{n:"VIP",p:1599,d:"Circle access + lounge"},{n:"Season pass",p:3999,d:"All seven nights"}]}
+    ],
+    bookings:[], inquiries:[]
+  };
+}
+
+var S=null;
+function load(){
+  try{ var raw=localStorage.getItem(KEY); S = raw? JSON.parse(raw) : defaults(); }
+  catch(e){ S=defaults(); }
+  if(!S || !S.events){ S=defaults(); }
+  if(!S.bookings) S.bookings=[];
+  if(!S.inquiries) S.inquiries=[];
+  if(!S.agents) S.agents=[];
+  if(!S.partners) S.partners=[];
+  if(!S.posts) S.posts=[];
+  if(!S.squads) S.squads={};
+  Object.keys(S.squads).forEach(function(c){
+    var sq=S.squads[c];
+    if(!sq.leader) sq.leader={name:sq.createdBy||"Squad leader",email:"",whatsapp:""};
+    if(!Array.isArray(sq.members)) sq.members=[];
+    sq.members=sq.members.map(function(m){ return (typeof m==="string") ? {name:m,email:"",whatsapp:"",joinedAt:new Date().toISOString()} : m; });
+    if(sq.accessId===undefined) sq.accessId=null;
+    if(sq.checkedIn===undefined) sq.checkedIn=false;
+    if(sq.checkedInAt===undefined) sq.checkedInAt=null;
+    if(sq.revoked===undefined) sq.revoked=false;
+  });
+  if(!S.guestlist) S.guestlist=[];
+  if(!S.settings.resellerEndpoint) S.settings.resellerEndpoint=S.settings.resellerEndpoint||"";
+  if(!S.settings.resellerNote) S.settings.resellerNote=S.settings.resellerNote||"";
+}
+function save(){ try{ localStorage.setItem(KEY,JSON.stringify(S)); }catch(e){ toast("Storage is full or blocked — changes may not be kept."); } }
+load();
+
+/* ---------- helpers ---------- */
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
+function rupee(n){ return "₹"+Math.round(Number(n||0)).toLocaleString("en-IN"); }
+function minPrice(ev){ return Math.min.apply(null,(ev.passes&&ev.passes.length?ev.passes:[{p:0}]).map(function(p){return Number(p.p)||0;})); }
+function isSold(ev){ return !!ev.manualSold || Number(ev.sold)>=Number(ev.capacity); }
+function normalizePhone10(raw){
+  var d=String(raw||"").replace(/\D/g,"");
+  if(d.length===12 && d.indexOf("91")===0) d=d.slice(2);
+  else if(d.length===11 && d.charAt(0)==="0") d=d.slice(1);
+  return d;
+}
+function isValidName(n){ return !!n && n.trim().length>=2 && /[A-Za-z]/.test(n); }
+function isValidEmail(m){ return /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(String(m||"").trim()); }
+function uid(p){ return p+Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
+function toast(msg){ var t=document.getElementById("toast"); t.textContent=msg; t.classList.add("on"); clearTimeout(t._h); t._h=setTimeout(function(){t.classList.remove("on");},3200); }
+function artCSS(i){ var a=ART[(i||0)%ART.length];
+  return "background:radial-gradient(120% 100% at 18% 12%,"+a[1]+"55,transparent 58%),radial-gradient(90% 90% at 88% 88%,"+a[2]+"44,transparent 55%),linear-gradient(140deg,"+a[0]+",#05070f 78%);";
+}
+function artSVG(i,label){
+  var a=ART[(i||0)%ART.length];
+  return '<div style="position:absolute;inset:0;'+artCSS(i)+'"></div>'+
+   '<svg viewBox="0 0 400 225" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;opacity:.55" aria-hidden="true">'+
+   '<g stroke="'+a[1]+'" fill="none" stroke-width="1" opacity=".55">'+
+   '<circle cx="320" cy="60" r="46"/><circle cx="320" cy="60" r="30"/><circle cx="320" cy="60" r="62"/>'+
+   '<path d="M258 60h124M320 -2v124M276 16l88 88M364 16l-88 88"/></g>'+
+   '<g fill="'+a[2]+'" opacity=".85"><circle cx="60" cy="40" r="2"/><circle cx="120" cy="90" r="1.5"/><circle cx="40" cy="150" r="1.8"/><circle cx="180" cy="30" r="1.4"/><circle cx="220" cy="170" r="2"/><circle cx="150" cy="200" r="1.3"/></g>'+
+   '</svg>'+
+   (label?'<div style="position:absolute;left:16px;bottom:14px;font-family:Sora;font-weight:800;font-size:1.05rem;color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.8);max-width:70%">'+esc(label)+'</div>':'');
+}
+
+/* ---------- starfield ---------- */
+(function(){
+  var c=document.getElementById("stars"),x=c.getContext("2d"),st=[],rm=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function size(){ c.width=innerWidth; c.height=innerHeight; st=[]; var n=Math.min(150,Math.round(innerWidth/10));
+    for(var i=0;i<n;i++) st.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.3+.2,a:Math.random(),s:Math.random()*.011+.002}); }
+  function draw(){ x.clearRect(0,0,c.width,c.height);
+    for(var i=0;i<st.length;i++){ var p=st[i]; if(!rm){p.a+=p.s; if(p.a>1||p.a<.1)p.s*=-1;}
+      x.globalAlpha=Math.max(.08,Math.min(1,p.a)); x.fillStyle=i%7===0?"#7ee8ff":"#ffffff";
+      x.beginPath(); x.arc(p.x,p.y,p.r,0,6.3); x.fill(); }
+    requestAnimationFrame(draw); }
+  size(); draw(); addEventListener("resize",size);
+})();
+
+/* ---------- nav ---------- */
+var NAV=[["home","Home"],["venues","Venues"],["services","Services"],["passes","My passes"],["faqs","FAQs"],["contact","Contact us"],["agent","Agent login"]];
+var DRAWER_NAV=NAV.concat([["about","About us"],["terms","Terms"],["privacy","Privacy policy"],["refund","Refund policy"],["organizer","Organiser terms"],["blog","Blog"],["logo","Logo centre"]]);
+function buildNav(){
+  document.getElementById("nav").innerHTML=NAV.map(function(n){return '<a href="#/'+n[0]+'" data-r="'+n[0]+'">'+n[1]+'</a>';}).join("");
+  document.getElementById("drawerNav").innerHTML=DRAWER_NAV.map(function(n){return '<a href="#/'+n[0]+'" onclick="closeDrawer()">'+n[1]+'</a>';}).join("");
+}
+function markNav(r){ [].forEach.call(document.querySelectorAll("#nav a"),function(a){ a.classList.toggle("on",a.getAttribute("data-r")===r); }); }
+document.getElementById("burger").onclick=function(){ var d=document.getElementById("drawer"); d.classList.add("open"); document.getElementById("scrim").classList.add("on"); this.setAttribute("aria-expanded","true"); };
+function closeDrawer(){ document.getElementById("drawer").classList.remove("open"); document.getElementById("scrim").classList.remove("on"); document.getElementById("burger").setAttribute("aria-expanded","false"); }
+function go(r){ location.hash="#/"+r; }
+
+/* ---------- ticker ---------- */
+function renderTicker(){
+  var t=esc(S.settings.ticker), one='<span>'+t.split("·").join('</span><span>')+'</span>';
+  document.getElementById("tickerTrack").innerHTML=one+one;
+}
+
+/* ---------- partner marquee ---------- */
+function renderPartners(){
+  var strip=document.getElementById("partnerStrip"), track=document.getElementById("partnerTrack");
+  if(!S.partners.length){ if(strip) strip.style.display="none"; return; }
+  if(strip) strip.style.display="";
+  var items=S.partners.map(function(p){
+    return '<div class="partner-item">'+(p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.name)+'">':'')+'<span>'+esc(p.name)+'</span></div>';
+  }).join("");
+  track.innerHTML=items+items;
+}
+
+/* ============================================================
+   VIEWS
+   ============================================================ */
+function vHome(){
+  return '<div class="wrap">'+bannerHTML()+heroHTML()+'</div>'+
+    '<div class="wrap sec">'+
+      '<div class="sec-head"><div><h2>Surat Navratri grounds</h2><p>Live capacity, live rates. Sold-out grounds close automatically.</p></div>'+
+      '<a class="btn btn-ghost btn-sm" href="#/venues">See all venues</a></div>'+
+      '<div class="grid">'+S.events.slice(0,3).map(cardHTML).join("")+'</div>'+
+    '</div>'+
+    servicesSection(true)+
+    '<div class="wrap sec"><div class="glass" style="padding:clamp(24px,4vw,44px);display:flex;gap:26px;flex-wrap:wrap;align-items:center">'+
+      '<div style="flex:1;min-width:260px"><h2>Running an event this season?</h2><p style="margin-top:10px">Tell us the dates and the ground. We will come back with a line-up, a run-sheet and a vendor plan within two working days.</p></div>'+
+      '<a class="btn btn-primary" href="#/contact">Send an enquiry</a></div></div>';
+}
+function heroHTML(){
+  var total=S.events.reduce(function(a,e){return a+Number(e.sold||0);},0);
+  var live=S.events.filter(function(e){return !isSold(e);}).length;
+  return '<div class="hero-line">'+
+    '<div><h1>Your universe. One pass.</h1>'+
+    '<p class="sub">Mars Nova Global runs Surat\'s Navratri grounds end to end — artists, direction, vendors and gates. Book a pass in under a minute and walk in with a QR code.</p>'+
+    '<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:22px"><button class="btn btn-primary" onclick="openBooking()">Book a pass</button><a class="btn btn-ghost" href="#/services">Our services</a></div></div>'+
+    '<div class="stats">'+
+      '<div class="stat"><div class="num">'+S.events.length+'</div><small>Grounds</small></div>'+
+      '<div class="stat"><div class="num">'+live+'</div><small>Booking open</small></div>'+
+      '<div class="stat"><div class="num">'+(total>999?(total/1000).toFixed(1)+"k":total)+'</div><small>Passes issued</small></div>'+
+    '</div></div>';
+}
+function bannerHTML(){
+  if(!S.featured.length) return '';
+  return '<section class="banner" aria-label="Featured events"><div class="slides" id="slides">'+
+    S.featured.map(function(f,i){
+      var ev=S.events.filter(function(e){return e.id===f.link;})[0];
+      return '<article class="slide'+(i===0?' on':'')+'" data-i="'+i+'">'+
+        '<div class="slide-art">'+(f.img?'<img src="'+esc(f.img)+'" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">':artSVG(f.art))+'</div><div class="slide-shade"></div>'+
+        '<div class="slide-body">'+
+          '<span class="pill gold">★ '+esc(f.kicker)+'</span>'+
+          '<h2>'+esc(f.title)+'</h2>'+
+          '<p style="color:#cfdcf7;margin:12px 0 0;max-width:46ch">'+esc(f.sub)+'</p>'+
+          '<div class="slide-meta"><span>'+esc(f.date)+'</span><span>'+esc(f.place)+'</span><span class="slide-price">'+esc(f.price)+'</span></div>'+
+          '<button class="btn '+(ev&&isSold(ev)?'sold':'btn-gold')+'" '+(ev&&isSold(ev)?'disabled':'onclick="openBooking(\''+esc(f.link)+'\')"')+'>'+(ev&&isSold(ev)?'Sold out':'Book now')+'</button>'+
+        '</div></article>';
+    }).join("")+'</div>'+
+    '<button class="b-arrow b-prev" onclick="slideBy(-1)" aria-label="Previous featured event">‹</button>'+
+    '<button class="b-arrow b-next" onclick="slideBy(1)" aria-label="Next featured event">›</button>'+
+    '<div class="dots" id="dots">'+S.featured.map(function(f,i){return '<button class="dot'+(i===0?' on':'')+'" onclick="slideTo('+i+')" aria-label="Featured event '+(i+1)+'"></button>';}).join("")+'</div>'+
+  '</section>';
+}
+function cardHTML(ev){
+  var sold=isSold(ev), pct=Math.min(100,Math.round(Number(ev.sold)/Math.max(1,Number(ev.capacity))*100));
+  var art = ev.img ? '<img src="'+esc(ev.img)+'" alt="'+esc(ev.name)+'" onerror="this.style.display=\'none\'">' : artSVG(ev.art);
+  return '<article class="card'+(sold?' isold':'')+'">'+
+    '<div class="card-art">'+art+
+      '<span class="badge">★ '+esc(ev.rating)+'</span>'+
+      '<span class="badge rate">'+(sold?'Sold out':'From '+rupee(minPrice(ev)))+'</span>'+
+    '</div>'+
+    '<div class="card-body">'+
+      '<h3>'+esc(ev.name)+'</h3>'+
+      '<div class="meta"><span>'+esc(ev.place)+'</span><span>'+esc(ev.date)+'</span><span>'+esc(ev.time)+'</span></div>'+
+      '<p style="font-size:.9rem;margin:0">'+esc(ev.desc)+'</p>'+
+      '<div class="tags">'+(ev.tags||[]).map(function(t){return '<span class="tag">'+esc(t)+'</span>';}).join("")+'</div>'+
+      '<div class="cap"><div class="bar"><i class="'+(pct>80?'hot':'')+'" style="width:'+pct+'%"></i></div>'+
+      '<small>'+(sold?'Capacity reached — '+Number(ev.capacity).toLocaleString("en-IN")+' passes issued':Number(ev.sold).toLocaleString("en-IN")+' of '+Number(ev.capacity).toLocaleString("en-IN")+' passes taken')+'</small>'+
+      '<div class="price-row"><div><span class="from">Passes start at</span><span class="amt">'+rupee(minPrice(ev))+'</span></div>'+
+      (sold? '<button class="btn btn-sm sold" disabled>Sold out</button>' : '<button class="btn btn-primary btn-sm" onclick="openBooking(\''+ev.id+'\')">Book now</button>')+
+      '</div></div>'+
+    '</div></article>';
+}
+var SERVICES=[
+  {t:"Artist management",i:"♪",d:"Booking, contracts, hospitality and line-up coordination for garba singers, dhol troupes, DJs and anchors.",
+   l:["Artist shortlisting against your budget and crowd profile","Contracting, advances and rider negotiation","Travel, stay and green-room hospitality","Stage-time scheduling across all nine nights"]},
+  {t:"Show direction",i:"▶",d:"Technical direction and phase alignment so the show runs to the minute, every night.",
+   l:["Minute-by-minute run sheet and cue list","Sound, light and LED phase alignment","Rehearsals, soundcheck and camera blocking","Live floor calls from the console"]},
+  {t:"Vendor management",i:"◫",d:"Multi-vendor logistics and contracts pulled into one accountable schedule.",
+   l:["Sound, light, stage, truss and power vendors","Food street, decor, seating and sanitation","Quotation comparison and contracting","Load-in, load-out and payment milestones"]},
+  {t:"Show operations",i:"⛨",d:"On-ground crowd control, route safety and gate scanning through peak footfall.",
+   l:["Gate layout, QR scanning and entry lanes","Bouncer and marshal deployment","Route safety, parking and exit flow","Medical point, fire lane and incident protocol"]}
+];
+function servicesSection(teaser){
+  return '<div class="wrap sec"><div class="sec-head"><div><h2>What Mars Nova Global runs</h2>'+
+    '<p>Four capabilities that organisers usually stitch together from four agencies.</p></div>'+
+    (teaser?'<a class="btn btn-ghost btn-sm" href="#/services">Full detail</a>':'')+'</div>'+
+    '<div class="svc-grid">'+SERVICES.map(function(s){
+      return '<div class="svc"><div class="ico" aria-hidden="true">'+s.i+'</div><h3>'+s.t+'</h3><p>'+s.d+'</p>'+
+        (teaser?'':'<ul>'+s.l.map(function(x){return '<li>'+x+'</li>';}).join("")+'</ul>')+'</div>';
+    }).join("")+'</div></div>';
+}
+function vVenues(){
+  return '<div class="wrap sec"><h1>Surat Navratri grounds</h1>'+
+    '<p class="mt">Every ground below is run by Mars Nova Global. Rates and timings are updated live by our operations desk; a ground closes itself the moment capacity is reached.</p>'+
+    '<div class="grid mt">'+S.events.map(cardHTML).join("")+'</div></div>';
+}
+function vServices(){
+  return '<div class="wrap sec"><h1>Services for organisers</h1>'+
+    '<p class="mt">Take one capability or hand us the whole event. Payments follow our standard 60 / 20 / 20 framework, set out in the <a href="#/organizer">organiser terms</a>.</p></div>'+
+    servicesSection(false)+
+    '<div class="wrap sec"><div class="glass" style="padding:clamp(24px,4vw,40px)"><h2>How an MNG event runs</h2>'+
+    '<ol style="color:var(--muted);padding-left:20px;margin-top:14px;max-width:70ch">'+
+    '<li style="margin-bottom:10px"><b style="color:#fff">Brief and budget.</b> We map crowd profile, ground capacity and spend against a realistic line-up.</li>'+
+    '<li style="margin-bottom:10px"><b style="color:#fff">Contracting.</b> Artists and vendors are locked with 60% advance released on signing.</li>'+
+    '<li style="margin-bottom:10px"><b style="color:#fff">Build and rehearsal.</b> Load-in, rig, soundcheck and a full run-through before night one; 20% falls due here.</li>'+
+    '<li style="margin-bottom:10px"><b style="color:#fff">Show nights.</b> Direction from the console, operations at the gates; the closing 20% settles on event day.</li>'+
+    '<li><b style="color:#fff">Wrap.</b> Load-out, vendor settlement and a footfall and scan report.</li></ol></div></div>';
+}
+function vPasses(){
+  var mine=S.bookings.slice().reverse();
+  if(!mine.length){
+    return '<div class="wrap sec"><h1>My passes</h1><div class="glass mt" style="padding:40px;text-align:center">'+
+      '<p style="margin:0 auto 18px">No passes on this device yet. Book a ground and your QR pass will be saved here.</p>'+
+      '<button class="btn btn-primary" onclick="openBooking()">Book a pass</button></div></div>';
+  }
+  return '<div class="wrap sec"><h1>My passes</h1><p class="mt">Saved on this device. Show the QR at the gate — one scan, one entry.</p>'+
+    '<div class="grid mt" style="grid-template-columns:repeat(auto-fill,minmax(330px,1fr))">'+
+    mine.map(function(b){ return '<div class="ticket">'+
+      '<div class="ticket-top"><h3>'+esc(b.event)+'</h3><span class="pill" style="margin:0">'+esc(b.pass)+'</span></div>'+
+      '<div class="ticket-mid"><div class="qrbox" id="qr_'+b.code+'"></div>'+
+      '<div class="tinfo"><div><small>Pass code</small><b>'+esc(b.code)+'</b></div>'+
+      '<div><small>Name</small><b>'+esc(b.name)+'</b></div>'+
+      '<div><small>Quantity</small><b>'+b.qty+'</b></div>'+
+      '<div><small>Paid</small><b>'+rupee(b.amount)+'</b></div>'+
+      '<div><small>Date</small><b>'+esc(b.date)+'</b></div>'+
+      '<div><small>Gate</small><b>'+esc(b.time)+'</b></div></div></div>'+
+      '<div style="padding:0 20px 16px"><button class="btn btn-gold btn-sm btn-block" onclick="resendOnWhatsApp(\''+b.code+'\')">Resend on WhatsApp</button></div>'+
+      '<div class="ticket-bot">Non-transferable · Non-refundable · Valid for a single entry</div></div>';
+    }).join("")+'</div>'+
+    '<div class="mt" style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-ghost btn-sm" onclick="exportCSV()">Download bookings (CSV)</button></div></div>';
+}
+function vFaqs(){
+  var Q=[
+    ["How do I get my pass after paying?","Your QR pass is generated the moment payment is confirmed and is saved under My passes on the same device and browser. Screenshot it, or download it from the pass screen."],
+    ["Can two people enter on one QR?","No. Each QR is valid for a single scan. A couple pass carries two entries on one code and both people must enter together at the same scan."],
+    ["What if my phone dies at the gate?","Carry the pass code and a photo ID. The gate desk can look the code up, but entry is faster with the QR on screen or on paper."],
+    ["Are passes refundable?","No. All passes are non-refundable and non-transferable once issued, including for no-shows, late arrival or a change of plan. See the refund policy."],
+    ["What happens if a night is cancelled?","If Mars Nova Global cancels a night for a reason within its control, that night's pass is honoured on an alternate night at the same ground, subject to capacity. Cancellation caused by weather, authority order or any force majeure event carries no refund or substitution."],
+    ["Is there an age limit?","Grounds are open to all ages. Guests under 16 must be accompanied by an adult pass holder. Photo ID may be checked at the gate."],
+    ["What is not allowed inside?","Outside food and drink, sharp dandiya sticks beyond the standard size, glass, alcohol, and any item the security marshal deems unsafe. Bag checks are mandatory."],
+    ["Can I book for a group?","Yes — select the quantity in the booking window. For 25 passes or more, write to us and we will issue a block with a single reference."],
+    ["Do you manage events outside Navratri?","Yes. Artist management, show direction, vendor management and operations run year-round for corporate events, brand launches and concerts."]
+  ];
+  return '<div class="wrap sec"><h1>FAQs</h1><div class="mt" style="max-width:76ch">'+
+    Q.map(function(q){return '<details class="acc"><summary>'+esc(q[0])+'</summary><div class="in">'+esc(q[1])+'</div></details>';}).join("")+
+    '</div></div>';
+}
+function vContact(){
+  return '<div class="wrap sec"><h1>Contact us</h1>'+
+    '<div class="mt" style="display:grid;gap:22px;grid-template-columns:1fr 1.25fr" id="ctGrid">'+
+      '<div class="glass" style="padding:26px">'+
+        '<h3>Talk to the desk</h3>'+
+        '<p style="font-size:.93rem;margin-top:10px">Ticketing queries are answered the same day. Organiser enquiries get a line-up and budget outline within two working days.</p>'+
+        '<div style="margin-top:18px"><small style="color:var(--muted-2);font-weight:700">Phone</small><div style="font-size:1.05rem;font-weight:700"><a href="tel:+917096052070">'+esc(S.settings.phone)+'</a></div></div>'+
+        '<div style="margin-top:14px"><small style="color:var(--muted-2);font-weight:700">Email</small><div style="font-size:1.02rem;font-weight:700"><a href="mailto:'+esc(S.settings.email)+'">'+esc(S.settings.email)+'</a></div></div>'+
+        '<div style="margin-top:14px"><small style="color:var(--muted-2);font-weight:700">Base</small><div style="font-weight:700">Surat, Gujarat</div></div>'+
+        '<div style="margin-top:14px"><small style="color:var(--muted-2);font-weight:700">Desk hours</small><div style="font-weight:700">10:00 AM – 9:00 PM, all days in season</div></div>'+
+      '</div>'+
+      '<div class="glass" style="padding:26px">'+
+        '<h3>Send an enquiry</h3>'+
+        '<div class="two mt"><div class="field"><label for="ciName">Name</label><input id="ciName" class="inp" placeholder="Your full name"></div>'+
+        '<div class="field"><label for="ciPhone">Phone</label><input id="ciPhone" class="inp" inputmode="numeric" placeholder="10-digit mobile"></div></div>'+
+        '<div class="field"><label for="ciMail">Email</label><input id="ciMail" class="inp" type="email" placeholder="you@example.com"></div>'+
+        '<div class="field"><label for="ciSvc">Service</label><select id="ciSvc" class="inp">'+
+          '<option>Navratri ticketing</option><option>Artist management</option><option>Show direction</option><option>Vendor management</option><option>Show operations</option></select></div>'+
+        '<div class="field"><label for="ciMsg">Message</label><textarea id="ciMsg" class="inp" placeholder="Dates, ground, expected footfall, budget range"></textarea></div>'+
+        '<div class="err" id="ciErr"></div>'+
+        '<button class="btn btn-primary btn-block" onclick="sendInquiry()">Send enquiry</button>'+
+      '</div></div>'+
+    '<style>@media(max-width:840px){#ctGrid{grid-template-columns:1fr!important}}</style></div>';
+}
+function vAbout(){
+  return '<div class="wrap sec prose"><h1>About us</h1>'+
+    '<p class="mt">Mars Nova Global is a Surat-based festival and event management company. We started on the artist side of the business — booking and managing performers — and grew into the parts of an event that decide whether the artist lands: direction, vendors, and what happens at the gate.</p>'+
+    '<h2>What we do</h2><p>Two halves of one business. For audiences, we sell and scan passes for the Navratri grounds we run. For organisers and brands, we supply artists, direct the show, manage vendors and run ground operations — as a package or piece by piece.</p>'+
+    '<h2>How we charge</h2><p>Organiser work runs on a fixed management fee agreed before contracting, not a percentage of your spend. Payments follow the 60 / 20 / 20 framework set out in the organiser terms.</p>'+
+    '<h2>Reach us</h2><p>Phone '+esc(S.settings.phone)+' · Email '+esc(S.settings.email)+' · Surat, Gujarat.</p></div>';
+}
+function vBlog(){
+  return '<div class="wrap sec"><h1>Blog</h1><p class="mt">Notes from the ground on running festivals in Gujarat.</p>'+
+    '<div class="grid mt">'+S.posts.map(function(p){
+      return '<article class="card" style="cursor:pointer" onclick="go(\'blog/'+p.id+'\')"><div class="card-art">'+(p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.title)+'">':artSVG(p.art))+'</div>'+
+        '<div class="card-body"><h3>'+esc(p.title)+'</h3><p style="font-size:.9rem;margin:0">'+esc(p.excerpt)+'</p>'+
+        '<span class="tag" style="align-self:flex-start">'+esc(p.date||"")+'</span></div></article>';
+    }).join("")+
+    (S.posts.length?"":'<p style="color:var(--muted-2)">No posts yet — check back soon.</p>')+'</div></div>';
+}
+function vBlogPost(id){
+  var p=S.posts.filter(function(x){return x.id===id;})[0];
+  if(!p) return '<div class="wrap sec"><h1>Post not found</h1><p class="mt">This post may have been removed.</p><a class="btn btn-ghost mt" href="#/blog">← Back to blog</a></div>';
+  var paras=String(p.body||"").split(/\n{2,}/).map(function(t){return '<p>'+esc(t).replace(/\n/g,"<br>")+'</p>';}).join("");
+  return '<div class="wrap sec prose"><a class="btn btn-ghost btn-sm" href="#/blog">← Back to blog</a>'+
+    '<h1 class="mt">'+esc(p.title)+'</h1><p style="color:var(--muted-2);font-size:.85rem;margin-top:6px">'+esc(p.date||"")+'</p>'+
+    (p.img?'<div class="glass mt" style="overflow:hidden;border-radius:18px;max-width:520px"><img src="'+esc(p.img)+'" alt="'+esc(p.title)+'" style="width:100%;display:block"></div>':'')+
+    '<div class="mt">'+paras+'</div></div>';
+}
+function vLogo(){
+  var mark = S.settings.logo
+    ? '<img src="'+esc(S.settings.logo)+'" alt="MNG logo" style="width:64px;height:64px;object-fit:cover;border-radius:12px;margin-inline:auto;display:block">'
+    : '<svg viewBox="0 0 48 48" style="width:54px;height:54px;margin-inline:auto" fill="none"><circle cx="24" cy="24" r="21" stroke="#25d7f0" stroke-width="1.4" opacity=".5"/><ellipse cx="24" cy="24" rx="21" ry="8" stroke="#3b74ff" stroke-width="1.2" opacity=".6" transform="rotate(-24 24 24)"/><circle cx="24" cy="24" r="8.5" fill="#3b74ff"/><path d="M24 4.5l2.4 6.6 6.6 2.4-6.6 2.4L24 22.5l-2.4-6.6-6.6-2.4 6.6-2.4z" fill="#fff"/></svg>';
+  return '<div class="wrap sec"><h1>Logo centre</h1><p class="mt">Brand assets for partners, press and reseller listings. Do not stretch, recolour or place the mark on a wash that fights its contrast.</p>'+
+    '<div class="grid mt" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">'+
+    [["On dark","#04060f"],["On brand navy","#0d1a3e"],["On charcoal","#111827"]].map(function(v){
+      return '<div class="glass" style="padding:26px;text-align:center"><div style="background:'+v[1]+';border-radius:14px;padding:26px;border:1px solid var(--line)">'+
+      mark+'<div style="font-family:Sora;font-weight:800;margin-top:10px;font-size:.85rem;color:#fff">MARS NOVA GLOBAL</div></div>'+
+      '<h3 style="margin-top:14px">'+v[0]+'</h3><p style="font-size:.85rem;margin:6px 0 0">'+(S.settings.logo?"Current uploaded mark":"Default generated emblem")+'</p></div>';
+    }).join("")+'</div>'+
+    '<div class="note info mt">Need a vector file, a co-branded lockup, or want to change the mark itself? Write to '+esc(S.settings.email)+', or update it from Admin → Logo centre.</div></div>';
+}
+
+/* ---------- legal pages ---------- */
+function vTerms(){
+  return '<div class="wrap sec prose"><h1>Terms and conditions</h1>'+
+  '<p class="mt">These terms govern every pass issued by Mars Nova Global ("MNG") and every entry to a ground operated by MNG. By booking a pass you accept them in full on behalf of yourself and everyone entering on your booking.</p>'+
+  '<h2>1. The pass</h2><ul>'+
+  '<li>A pass is a revocable licence to enter a named ground on a named date. It is not a ticket to property, a seat, or a guaranteed view of any performer.</li>'+
+  '<li>Every pass carries a unique QR code valid for <b>one scan only</b>. Once scanned, the code is dead. A re-scan, a screenshot of someone else\'s code, a forwarded code or a duplicated code will be refused at the gate with no refund.</li>'+
+  '<li>A couple pass admits exactly two people entering together on one scan. Passes are non-transferable and may not be resold.</li>'+
+  '<li>Photo ID may be demanded at the gate and entry may be refused if the name does not match the booking.</li></ul>'+
+  '<h2>2. Payment and pricing</h2><ul>'+
+  '<li>Rates displayed on this site at the moment of booking are the rates that apply. MNG may revise rates for unsold inventory at any time without notice; a revision does not entitle an earlier buyer to a refund or a later buyer to an earlier price.</li>'+
+  '<li>A booking is confirmed only when payment is received and a pass code is issued. A debited amount without an issued code is a failed booking and is reversed by your bank on its own cycle.</li></ul>'+
+  '<h2>3. Non-refundable</h2>'+
+  '<div class="note"><b>All passes are final.</b> No refund, part refund, credit, transfer or date change is offered for any reason — including non-attendance, late arrival, refused entry for breach of these terms, illness, travel failure, or a change of plan.</div>'+
+  '<h2>4. Conduct and ground rules</h2><ul>'+
+  '<li>Bag checks and frisking are mandatory. Entry may be refused without refund to anyone intoxicated, carrying a prohibited item, or behaving in a way a marshal judges unsafe.</li>'+
+  '<li>Prohibited: outside food and drink, alcohol, narcotics, glass, weapons, oversized or sharpened dandiya sticks, fireworks, drones, and professional recording equipment without written accreditation.</li>'+
+  '<li>MNG may evict any person for misconduct, and may close a floor, stop music or hold the gate on the instruction of police, fire or civic authority.</li>'+
+  '<li>Guests under 16 must be accompanied by an adult pass holder at all times.</li></ul>'+
+  '<h2>5. Recording and publicity</h2><p>By entering, you consent to being photographed and filmed, and to MNG using that footage for promotion across any medium, in perpetuity, without payment or further permission.</p>'+
+  '<h2>6. Limitation of liability and waiver</h2>'+
+  '<div class="note"><b>Attendance is at your own risk.</b> To the fullest extent permitted by law, Mars Nova Global, its directors, employees, contractors, vendors and artists accept no liability for: cancellation, postponement, abandonment, curtailment or rescheduling of an event; any act of God, flood, cyclone, heavy rain, earthquake, epidemic, fire, power failure, strike, riot, stampede, terrorism, war, or any order, restriction or withdrawal of permission by police, court or any civic, state or central authority; loss, theft or damage to personal property on or around the ground; injury, illness or death not directly caused by MNG\'s own proven gross negligence. Where liability cannot be excluded by law, it is capped at the face value of the pass purchased, and never extends to travel, accommodation, consequential or indirect loss.</div>'+
+  '<h2>7. Force majeure</h2><p>An event or night stopped, shortened or cancelled by any circumstance beyond MNG\'s reasonable control is treated as performed. No refund or substitution arises from a force majeure event.</p>'+
+  '<h2>8. Governing law</h2><p>These terms are governed by the laws of India. Courts at Surat, Gujarat have exclusive jurisdiction over any dispute.</p>'+
+  '<p style="margin-top:26px;font-size:.85rem;color:var(--muted-2)">These terms are a working draft prepared for the site. Have them reviewed by a lawyer before you take live payments.</p></div>';
+}
+function vPrivacy(){
+  return '<div class="wrap sec prose"><h1>Privacy policy</h1>'+
+  '<p class="mt">This policy explains what Mars Nova Global collects when you book a pass or send an enquiry, why we hold it, and what you can ask us to do with it.</p>'+
+  '<h2>What we collect</h2><ul>'+
+  '<li><b>Booking details:</b> name, mobile number, email address, pass type, quantity, amount paid, pass code and scan status.</li>'+
+  '<li><b>Enquiry details:</b> name, phone, email, the service you selected and anything you write in the message box.</li>'+
+  '<li><b>Payment reference:</b> a transaction or UTR reference returned by the payment provider. We never see or store your card number, UPI PIN, CVV or bank credentials.</li>'+
+  '<li><b>Device data:</b> passes you book are stored in your own browser so you can reopen them under My passes.</li></ul>'+
+  '<h2>Why we hold it</h2><ul><li>To issue your pass and verify it at the gate.</li><li>To contact you about the event you booked — a timing change, a gate change, a cancellation.</li><li>To reconcile sales with resellers and our accounts.</li><li>To answer an enquiry you sent us.</li><li>To meet a legal, tax or law-enforcement obligation.</li></ul>'+
+  '<h2>Who we share it with</h2><p>Booking data is shared with the payment provider that processes your transaction, with the gate and scanning team at the ground you booked, with authorised resellers for the passes they sold, and with authorities where the law requires it. We do not sell your data to advertisers or list brokers.</p>'+
+  '<h2>Marketing</h2><p>We may send occasional messages about MNG events on the number or email you gave us. Reply STOP, or email us, and we will stop.</p>'+
+  '<h2>How long we keep it</h2><p>Booking records are kept for the season plus the period our accounting and tax obligations require. Enquiry records are kept for up to 24 months from your last contact.</p>'+
+  '<h2>Your rights</h2><p>Write to '+esc(S.settings.email)+' to ask for a copy of what we hold on you, to correct something wrong, to withdraw consent for marketing, or to ask for deletion. We will respond within 30 days. Deletion cannot extend to records we must keep by law, or to a pass already scanned at a gate.</p>'+
+  '<h2>Security</h2><p>We limit access to booking data to the operations desk and the gate team. No system is perfectly secure, and we cannot guarantee against every breach; we will tell affected people promptly if one occurs.</p>'+
+  '<h2>Contact</h2><p>'+esc(S.settings.email)+' · '+esc(S.settings.phone)+' · Surat, Gujarat.</p></div>';
+}
+function vRefund(){
+  return '<div class="wrap sec prose"><h1>Refund policy</h1>'+
+  '<div class="note mt"><b>Passes sold by Mars Nova Global are non-refundable.</b> No refund, part refund, credit note, transfer or date change is issued once a pass code has been generated.</div>'+
+  '<h2>This includes</h2><ul>'+
+  '<li>Not attending, arriving after the gate closes, or leaving early.</li><li>Entry refused for intoxication, a prohibited item, a failed ID check or misconduct.</li>'+
+  '<li>A duplicate, forwarded, resold or already-scanned QR code.</li><li>Illness, travel failure, weather on your side, or a change of plan.</li>'+
+  '<li>Booking the wrong ground, the wrong date, the wrong pass type or the wrong quantity.</li>'+
+  '<li>Cancellation or curtailment caused by rain, flood, storm, an authority order, a police instruction or any other force majeure event.</li></ul>'+
+  '<h2>The only exceptions</h2><ul>'+
+  '<li><b>Failed payment.</b> If money left your account but no pass code was issued, it is a failed transaction. Your bank reverses it on its own cycle, usually within 5 to 7 working days. Send us the UTR and we will confirm from our side.</li>'+
+  '<li><b>Duplicate charge.</b> If the same booking was charged twice, we refund the extra charge to the source account within 7 working days of verification.</li>'+
+  '<li><b>Cancellation within our control.</b> If MNG cancels a night for a reason inside its own control, that night\'s pass is honoured on an alternate night at the same ground, subject to capacity. This is a substitution, not a refund.</li></ul>'+
+  '<h2>How to raise a claim</h2><p>Email '+esc(S.settings.email)+' with your pass code, registered mobile number, amount and the payment UTR, within 7 days of the transaction. Claims raised after 7 days are not examined.</p>'+
+  '<h2>Chargebacks</h2><p>Raising a chargeback on a valid, issued pass will result in the pass being cancelled and the code blocked at the gate, and may be contested with evidence of issue and scan.</p></div>';
+}
+function vOrganizer(){
+  return '<div class="wrap sec prose"><h1>Organiser terms</h1>'+
+  '<p class="mt">These terms apply where Mars Nova Global is engaged by an organiser, promoter, brand or committee for artist management, show direction, vendor management, show operations, or ticketing.</p>'+
+  '<h2>1. Scope and fee</h2><p>Scope is fixed in a written proposal. MNG charges a fixed management fee agreed before contracting, separate from artist fees, vendor costs and pass-through expenses. Anything outside the signed scope is quoted separately before it is executed.</p>'+
+  '<h2>2. Payment framework — 60 / 20 / 20</h2>'+
+  '<div class="glass" style="padding:20px;margin:16px 0"><div class="tbl-scroll"><table class="tbl">'+
+  '<tr><th>Milestone</th><th>Share</th><th>Due</th></tr>'+
+  '<tr><td>Confirmation advance</td><td><b style="color:#fff">60%</b></td><td>On signing, before any artist or vendor is locked</td></tr>'+
+  '<tr><td>Pre-event instalment</td><td><b style="color:#fff">20%</b></td><td>No later than 7 days before the first show date</td></tr>'+
+  '<tr><td>Event-day balance</td><td><b style="color:#fff">20%</b></td><td>On the event day, before the show call time</td></tr>'+
+  '</table></div></div>'+
+  '<ul><li>No artist, vendor or venue is confirmed until the 60% advance is received. Dates held without the advance are released without notice.</li>'+
+  '<li>If the 20% pre-event instalment is not received 7 days out, MNG may suspend the build, and any resulting delay or cost sits with the organiser.</li>'+
+  '<li>If the closing 20% is not received before call time, MNG may hold the show start. Any loss arising from that hold sits with the organiser.</li>'+
+  '<li>Late payment carries interest at 1.5% per month on the outstanding amount from the due date.</li>'+
+  '<li>Statutory taxes are charged over and above every milestone. TDS, where applicable, must be certified within the quarter.</li></ul>'+
+  '<h2>3. Cancellation by the organiser</h2><ul>'+
+  '<li>The 60% advance is non-refundable in all cases once artists or vendors have been contracted against it.</li>'+
+  '<li>Cancellation within 14 days of the show date: the full contracted fee remains payable, along with all committed artist and vendor costs.</li>'+
+  '<li>Any artist or vendor advance already released is recovered strictly on that artist\'s or vendor\'s own cancellation terms; MNG does not underwrite it.</li></ul>'+
+  '<h2>4. Force majeure</h2>'+
+  '<div class="note">Neither party is liable for failure to perform caused by an event beyond reasonable control — rain, flood, cyclone, earthquake, fire, epidemic or pandemic, power failure, strike, riot, stampede, terrorism, war, artist illness or no-show, or any order, restriction, permission withdrawal or shutdown by police, court, or civic, state or central authority. In such an event MNG is released from performance, retains all amounts received against work done and commitments made, and carries no liability for the organiser\'s losses, including ticket revenue, sponsorship, hospitality or reputational loss.</div>'+
+  '<h2>5. Organiser responsibilities</h2><ul>'+
+  '<li>Ground permissions, police NOC, fire NOC, sound and time permissions, PPL/IPRS music licences and local body clearances are the organiser\'s responsibility unless the proposal explicitly transfers them to MNG.</li>'+
+  '<li>The organiser provides safe, legal power, structurally sound ground and stage access, and insurance for the venue and public liability.</li>'+
+  '<li>The organiser indemnifies MNG against any claim arising from a missing permission, an unsafe ground condition, or an act of the organiser\'s own staff or contractors.</li></ul>'+
+  '<h2>6. Liability cap</h2><p>MNG\'s total liability under any engagement is capped at the management fee actually received for that engagement. MNG is never liable for indirect, consequential or revenue loss.</p>'+
+  '<h2>7. Confidentiality and credit</h2><p>Commercials stay confidential on both sides. MNG may list the event in its portfolio and use photographs and footage for promotion unless the proposal says otherwise in writing.</p>'+
+  '<h2>8. Governing law</h2><p>Indian law applies. Courts at Surat, Gujarat have exclusive jurisdiction.</p>'+
+  '<p style="margin-top:26px;font-size:.85rem;color:var(--muted-2)">A working draft for the site. Get it reviewed by a lawyer before you sign it with a client.</p></div>';
+}
+
+/* ---------- router ---------- */
+var ROUTES={home:vHome,venues:vVenues,services:vServices,passes:vPasses,faqs:vFaqs,contact:vContact,
+  about:vAbout,blog:vBlog,logo:vLogo,terms:vTerms,privacy:vPrivacy,refund:vRefund,organizer:vOrganizer,agent:vAgent,gate:vGate};
+function route(){
+  var raw=(location.hash||"#/home").replace("#/","").split("?")[0];
+  var parts=raw.split("/").filter(Boolean);
+  var r=parts[0]||"home";
+  if(r==="blog" && parts[1]){
+    document.getElementById("app").innerHTML=vBlogPost(parts[1]);
+    markNav("blog"); window.scrollTo({top:0,behavior:"instant"}); return;
+  }
+  if(r==="squad" && parts[1]){
+    document.getElementById("app").innerHTML=vSquad(parts[1]);
+    var sqv=S.squads[parts[1]]; if(sqv&&sqv.accessId) drawQR("acQR_"+sqv.code,sqv.accessId);
+    markNav(""); window.scrollTo({top:0,behavior:"instant"}); return;
+  }
+  if(!ROUTES[r]) r="home";
+  document.getElementById("app").innerHTML=ROUTES[r]();
+  markNav(r); window.scrollTo({top:0,behavior:"instant"});
+  if(r==="home") startSlider();
+  if(r==="passes") S.bookings.forEach(function(b){ drawQR("qr_"+b.code,b.code); });
+  if(r==="gate" && GATE_AUTH){ var gi=document.getElementById("gateCode"); if(gi) gi.focus(); }
+}
+addEventListener("hashchange",route);
+
+/* ---------- featured slider ---------- */
+var slI=0, slT=null;
+function startSlider(){
+  clearInterval(slT);
+  if(!S.featured.length) return;
+  slI=0; slT=setInterval(function(){ slideBy(1); },6500);
+  var el=document.getElementById("slides"); if(!el) return;
+  el.onmouseenter=function(){clearInterval(slT);};
+  el.onmouseleave=function(){clearInterval(slT); slT=setInterval(function(){slideBy(1);},6500);};
+  var x0=null;
+  el.addEventListener("touchstart",function(e){x0=e.touches[0].clientX;},{passive:true});
+  el.addEventListener("touchend",function(e){ if(x0===null)return; var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>45) slideBy(dx<0?1:-1); x0=null; },{passive:true});
+}
+function slideTo(i){
+  var sl=document.querySelectorAll("#slides .slide"), dots=document.querySelectorAll("#dots .dot");
+  if(!sl.length) return;
+  slI=(i+sl.length)%sl.length;
+  for(var k=0;k<sl.length;k++){ sl[k].classList.toggle("on",k===slI); if(dots[k]) dots[k].classList.toggle("on",k===slI); }
+}
+function slideBy(d){ slideTo(slI+d); }
+
+/* ---------- agent portal ---------- */
+var AGENT=null;
+(function(){ try{ var id=localStorage.getItem("mng_agent_id"); if(id) AGENT=(S.agents||[]).filter(function(a){return a.id===id && a.active;})[0]||null; }catch(e){} })();
+function vAgent(){
+  if(!AGENT) return agentLoginView();
+  var mine=S.bookings.filter(function(b){return b.agentId===AGENT.id;});
+  var total=mine.reduce(function(a,b){return a+Number(b.amount||0);},0);
+  return '<div class="wrap sec"><div class="sec-head"><div><h1>Agent desk</h1><p>Signed in as <b style="color:#fff">'+esc(AGENT.name)+'</b>. Passes you issue are tracked to your account.</p></div>'+
+   '<button class="btn btn-ghost btn-sm" onclick="agentLogout()">Log out</button></div>'+
+   '<div class="stats mt" style="margin-bottom:26px"><div class="stat"><div class="num">'+mine.length+'</div><small>Bookings by you</small></div>'+
+   '<div class="stat"><div class="num">'+mine.reduce(function(a,b){return a+Number(b.qty||0);},0)+'</div><small>Passes sold</small></div>'+
+   '<div class="stat"><div class="num">'+rupee(total)+'</div><small>Value collected</small></div></div>'+
+   '<h2>Sell a pass</h2><p>Pick a ground and issue a pass the same way a customer would — the booking is tagged to you.</p>'+
+   '<div class="grid mt">'+S.events.map(function(e){ var sold=isSold(e); return '<article class="card'+(sold?' isold':'')+'">'+
+     '<div class="card-art">'+(e.img?'<img src="'+esc(e.img)+'" alt="'+esc(e.name)+'">':artSVG(e.art))+'<span class="badge">★ '+esc(e.rating)+'</span><span class="badge rate">'+(sold?'Sold out':'From '+rupee(minPrice(e)))+'</span></div>'+
+     '<div class="card-body"><h3>'+esc(e.name)+'</h3><div class="meta"><span>'+esc(e.place)+'</span><span>'+esc(e.date)+'</span></div>'+
+     (sold?'<button class="btn btn-sm sold" disabled>Sold out</button>':'<button class="btn btn-primary btn-sm" onclick="openBooking(\''+e.id+'\',true)">Sell a pass</button>')+
+     '</div></article>'; }).join("")+'</div>'+
+   (mine.length? '<h2 class="mt">Your recent sales</h2><div class="tbl-scroll mt"><table class="tbl"><tr><th>Code</th><th>Customer</th><th>Ground</th><th>Pass</th><th>Qty</th><th>Amount</th></tr>'+
+     mine.slice().reverse().slice(0,20).map(function(b){return '<tr><td>'+esc(b.code)+'</td><td>'+esc(b.name)+'</td><td>'+esc(b.event)+'</td><td>'+esc(b.pass)+'</td><td>'+b.qty+'</td><td>'+rupee(b.amount)+'</td></tr>';}).join("")+'</table></div>':'')+
+   '</div>';
+}
+function agentLoginView(){
+  return '<div class="wrap sec"><h1>Agent login</h1><p class="mt">For MNG staff and reselling partners issuing passes on our behalf. Ask the operations desk for your username and password.</p>'+
+   '<div class="glass mt" style="padding:30px;max-width:420px">'+
+   '<div class="field"><label for="agU">Username</label><input id="agU" class="inp" autocomplete="username"></div>'+
+   '<div class="field"><label for="agP">Password</label><input id="agP" class="inp" type="password" autocomplete="current-password" onkeypress="if(event.key===\'Enter\')agentLogin()"></div>'+
+   '<div class="err" id="agErr"></div>'+
+   '<button class="btn btn-primary btn-block" onclick="agentLogin()">Log in</button></div>'+
+   '<div class="note info mt" style="max-width:64ch">Reselling through a partner platform such as FastTicket needs that platform\'s own documented API and account credentials, called from a small server — a public web page can\'t safely hold that secret or call an arbitrary partner API directly. This portal is MNG\'s own agent login for now; once a partner supplies real API access, it can be wired in behind this same screen.</div></div>';
+}
+function agentLogin(){
+  var u=document.getElementById("agU").value.trim(), p=document.getElementById("agP").value, e=document.getElementById("agErr");
+  var found=(S.agents||[]).filter(function(a){return a.username===u && a.password===p && a.active;})[0];
+  if(!found) return showErr(e,"Wrong username or password, or this account is disabled.");
+  AGENT=found; try{ localStorage.setItem("mng_agent_id",found.id); }catch(err){}
+  route();
+}
+function agentLogout(){ AGENT=null; try{ localStorage.removeItem("mng_agent_id"); }catch(e){} route(); }
+function drawQR(elId,text){
+  var el=document.getElementById(elId); if(!el) return;
+  el.innerHTML="";
+  try{
+    if(typeof QRCode!=="undefined"){ new QRCode(el,{text:text,width:280,height:280,correctLevel:QRCode.CorrectLevel.M}); return; }
+  }catch(e){}
+  // fallback pattern if the QR library is blocked
+  var n=21,h=0; for(var i=0;i<text.length;i++) h=(h*31+text.charCodeAt(i))>>>0;
+  var c=document.createElement("canvas"); c.width=c.height=n*12; var x=c.getContext("2d");
+  x.fillStyle="#fff"; x.fillRect(0,0,c.width,c.height); x.fillStyle="#000";
+  for(var r=0;r<n;r++)for(var q=0;q<n;q++){ h=(h*1103515245+12345)>>>0; if((h>>16&1)) x.fillRect(q*12,r*12,12,12); }
+  el.appendChild(c);
+  el.insertAdjacentHTML("beforeend",'<div style="position:absolute"></div>');
+}
+
+/* ============================================================
+   BOOKING FLOW
+   ============================================================ */
+var BK={step:1,eventId:null,passIdx:0,qty:1,name:"",phone:"",email:"",code:null,agentSale:false,squadCode:null};
+function openBooking(evId,agentSale,squadCode){
+  var open=S.events.filter(function(e){return !isSold(e);});
+  if(!open.length){ toast("Every ground is sold out right now."); return; }
+  var chosen = evId && !isSold(S.events.filter(function(e){return e.id===evId;})[0]||{manualSold:true}) ? evId : open[0].id;
+  BK={step:1,eventId:chosen,passIdx:0,qty:1,name:"",phone:"",email:"",code:null,agentSale:!!agentSale,squadCode:squadCode||null};
+  document.getElementById("bookModal").classList.add("on");
+  document.body.style.overflow="hidden";
+  renderBooking();
+}
+function closeBooking(){ document.getElementById("bookModal").classList.remove("on"); document.body.style.overflow=""; if(location.hash.indexOf("passes")>-1||location.hash.indexOf("agent")>-1) route(); }
+function openSquadBuilder(){ openBooking(); }
+function ev(){ return S.events.filter(function(e){return e.id===BK.eventId;})[0]; }
+function persistBK(){ try{ localStorage.setItem("mng_bk_draft",JSON.stringify(BK)); }catch(e){} }
+function clearBKDraft(){ try{ localStorage.removeItem("mng_bk_draft"); }catch(e){} }
+function tryRestoreBK(){
+  var raw; try{ raw=localStorage.getItem("mng_bk_draft"); }catch(e){ return; }
+  if(!raw) return;
+  var draft; try{ draft=JSON.parse(raw); }catch(e){ clearBKDraft(); return; }
+  if(!draft || !draft.eventId || draft.code) return;
+  var e=S.events.filter(function(x){return x.id===draft.eventId;})[0];
+  if(!e){ clearBKDraft(); return; }
+  if(!e.passes.length){ clearBKDraft(); return; }
+  draft.passIdx=Math.max(0,Math.min(draft.passIdx||0,e.passes.length-1));
+  draft.qty=Math.max(1,Math.min(10,Number(draft.qty)||1));
+  if(!(draft.step>=1&&draft.step<=5)) draft.step=1;
+  BK=draft;
+  document.getElementById("bookModal").classList.add("on");
+  document.body.style.overflow="hidden";
+  renderBooking();
+  toast("Welcome back — picked up right where you left off.");
+}
+function renderBooking(){
+  persistBK();
+  var steps=document.getElementById("bkSteps");
+  steps.innerHTML=[1,2,3,4,5].map(function(i){return '<div class="step'+(i<=BK.step?' on':'')+'"></div>';}).join("");
+  document.getElementById("bkTitle").textContent=["Choose your pass","Your details","Coming with a crew?","Pay with UPI","Your pass is ready"][BK.step-1];
+  var b=document.getElementById("bkBody");
+  if(BK.step===1) b.innerHTML=bkStep1();
+  else if(BK.step===2) b.innerHTML=bkStep2();
+  else if(BK.step===3){ b.innerHTML=bkStepSquad(); var sq3=BK.squadCode?S.squads[BK.squadCode]:null; if(sq3&&sq3.accessId) drawQR("acQR_"+sq3.code,sq3.accessId); }
+  else if(BK.step===4){ b.innerHTML=bkStep3(); drawQR("payQR","upi://pay?pa=marsnovaglobal@upi&pn=Mars%20Nova%20Global&am="+bkTotal()+"&cu=INR&tn="+encodeURIComponent("MNG "+ev().name)); }
+  else { b.innerHTML=bkStep4(); drawQR("passQR",BK.code); var sq5=BK.squadCode?S.squads[BK.squadCode]:null; if(sq5&&sq5.accessId) drawQR("acQR_"+sq5.code,sq5.accessId); }
+}
+function bkTotal(){ var e=ev(); return (Number(e.passes[BK.passIdx].p)||0)*BK.qty; }
+function bkStep1(){
+  var e=ev();
+  var opts=S.events.map(function(x){ return '<option value="'+x.id+'"'+(x.id===BK.eventId?' selected':'')+(isSold(x)?' disabled':'')+'>'+esc(x.name)+(isSold(x)?" — sold out":"")+'</option>'; }).join("");
+  return '<div class="field"><label for="bkVenue">Ground</label><select id="bkVenue" class="inp" onchange="BK.eventId=this.value;BK.passIdx=0;renderBooking()">'+opts+'</select></div>'+
+   '<div class="meta" style="margin:-4px 0 16px"><span>'+esc(e.place)+'</span><span>'+esc(e.date)+'</span><span>'+esc(e.time)+'</span></div>'+
+   e.passes.map(function(p,i){ return '<div class="pass'+(i===BK.passIdx?' on':'')+'" onclick="BK.passIdx='+i+';renderBooking()" role="button" tabindex="0" onkeypress="if(event.key===\'Enter\'){BK.passIdx='+i+';renderBooking()}">'+
+     '<div><div class="nm">'+esc(p.n)+'</div><div class="ds">'+esc(p.d||"")+'</div></div><div class="pr">'+rupee(p.p)+'</div></div>'; }).join("")+
+   '<div class="qty mt"><span style="font-weight:700">Quantity</span>'+
+   '<button onclick="BK.qty=Math.max(1,BK.qty-1);renderBooking()" aria-label="Fewer">−</button><b>'+BK.qty+'</b>'+
+   '<button onclick="BK.qty=Math.min(10,BK.qty+1);renderBooking()" aria-label="More">+</button>'+
+   '<small style="margin-left:auto;color:var(--muted-2)">Max 10 per booking</small></div>'+
+   '<div class="total"><span>Total payable ('+rupee(e.passes[BK.passIdx].p)+' × '+BK.qty+')</span><span class="amt">'+rupee(bkTotal())+'</span></div>'+
+   '<button class="btn btn-primary btn-block" onclick="BK.step=2;renderBooking()">Continue</button>';
+}
+function bkStep2(){
+  return '<div class="field"><label for="bkName">Full name</label><input id="bkName" class="inp" value="'+esc(BK.name)+'" placeholder="As on your ID"></div>'+
+  '<div class="two"><div class="field"><label for="bkPhone">WhatsApp number (required — your pass is sent here)</label><input id="bkPhone" class="inp" inputmode="numeric" value="'+esc(BK.phone)+'" placeholder="10-digit WhatsApp number"></div>'+
+  '<div class="field"><label for="bkEmail">Email address</label><input id="bkEmail" class="inp" type="email" value="'+esc(BK.email)+'" placeholder="you@example.com"></div></div>'+
+  '<div class="err" id="bkErr"></div>'+
+  '<div class="total"><span>'+esc(ev().passes[BK.passIdx].n)+' × '+BK.qty+' ('+rupee(ev().passes[BK.passIdx].p)+' each)</span><span class="amt">'+rupee(bkTotal())+'</span></div>'+
+  '<div style="display:flex;gap:10px"><button class="btn btn-ghost" onclick="BK.step=1;renderBooking()">Back</button>'+
+  '<button class="btn btn-primary" style="flex:1" onclick="submitDetails()">Continue to payment</button></div>'+
+  '<p style="font-size:.78rem;margin-top:14px;color:var(--muted-2)">By continuing you accept the <a href="#/terms" onclick="closeBooking()">terms</a> and the non-refundable <a href="#/refund" onclick="closeBooking()">pass policy</a>.</p>';
+}
+function submitDetails(){
+  var n=document.getElementById("bkName").value.trim(),
+      p=normalizePhone10(document.getElementById("bkPhone").value),
+      m=document.getElementById("bkEmail").value.trim(), e=document.getElementById("bkErr");
+  if(!isValidName(n)){ return showErr(e,"Enter the name that is on your ID."); }
+  if(p.length!==10){ return showErr(e,"Enter a valid 10-digit WhatsApp number — this is required, your pass is sent here."); }
+  if(!isValidEmail(m)){ return showErr(e,"Enter a valid email address — your pass copy goes here."); }
+  BK.name=n; BK.phone=p; BK.email=m; BK.step=3; renderBooking();
+}
+function showErr(el,msg){ el.textContent=msg; el.classList.add("on"); return false; }
+
+/* ---------- custom confirm/prompt (reliable everywhere, unlike native dialogs) ---------- */
+var ASK_CB=null, ASK_IS_PROMPT=false;
+function mngConfirm(msg,onYes){
+  document.getElementById("askTitle").textContent="Please confirm";
+  document.getElementById("askMsg").textContent=msg;
+  document.getElementById("askInputWrap").style.display="none";
+  document.getElementById("askOkBtn").textContent="Confirm";
+  ASK_IS_PROMPT=false; ASK_CB=onYes;
+  document.getElementById("askModal").classList.add("on");
+  document.body.style.overflow="hidden";
+}
+function mngPrompt(msg,defVal,onSubmit){
+  document.getElementById("askTitle").textContent="Quick question";
+  document.getElementById("askMsg").textContent=msg;
+  document.getElementById("askInputWrap").style.display="";
+  document.getElementById("askInput").value=defVal||"";
+  document.getElementById("askOkBtn").textContent="OK";
+  ASK_IS_PROMPT=true; ASK_CB=onSubmit;
+  document.getElementById("askModal").classList.add("on");
+  document.body.style.overflow="hidden";
+  setTimeout(function(){ var i=document.getElementById("askInput"); if(i) i.focus(); },50);
+}
+function closeAsk(cancelled){
+  document.getElementById("askModal").classList.remove("on");
+  document.body.style.overflow="";
+  var cb=ASK_CB, val=ASK_IS_PROMPT?document.getElementById("askInput").value:true;
+  ASK_CB=null;
+  if(!cancelled && cb) cb(val);
+}
+function bkStepSquad(){
+  if(BK.squadCode && S.squads[BK.squadCode]){
+    var sq=S.squads[BK.squadCode];
+    ensureAccessCard(sq);
+    var n=sq.members.length, unlocked=!!sq.accessId;
+    if(unlocked) setGuestlistCandidate(sq.leader.name,sq.leader.email,sq.leader.whatsapp);
+    return '<div class="glass" style="padding:20px">'+
+      '<h3>Your squad — <span style="color:var(--cyan)">'+esc(sq.name)+'</span></h3>'+
+      '<p style="font-size:.9rem;margin-top:8px">'+n+' of 4 needed for the squad perk to unlock.</p>'+
+      '<div class="bar" style="margin-top:10px"><i style="width:'+Math.min(100,n/4*100)+'%"></i></div>'+
+      '<div class="squad-members">'+sq.members.map(function(m){return '<span class="tag">'+esc(m.name)+'</span>';}).join("")+'</div>'+
+      (unlocked?'':
+        '<div class="squad-link-box mt"><span style="flex:1">'+esc(squadLinkFor(BK.squadCode))+'</span>'+
+        '<button class="btn btn-ghost btn-sm" onclick="copySquadLink(\''+BK.squadCode+'\')">Copy</button></div>'+
+        '<div class="note info">Once 4 or more people have joined, the whole squad gets priority entry lane access and a digital group pass badge.</div>'+
+        '<button class="btn btn-ghost btn-sm mt" onclick="simulateJoin(\''+BK.squadCode+'\')">+ Simulate a friend joining (demo)</button>')+
+      (unlocked?
+        '<div class="note info mt" style="border-color:rgba(176,107,255,.5);background:rgba(176,107,255,.1)">🎉 Squad complete — priority entry lane and your group Access Card are unlocked.</div>'+
+        '<div class="mt">'+accessCardHTML(sq)+'</div>'+guestlistButtonHTML()
+        :'')+
+      ' <button class="btn btn-ghost btn-sm mt" onclick="BK.squadCode=null;renderBooking()">Don\'t book as part of this squad</button>'+
+    '</div>'+
+    '<div style="display:flex;gap:10px;margin-top:18px"><button class="btn btn-ghost" onclick="BK.step=2;renderBooking()">Back</button>'+
+    '<button class="btn btn-primary" style="flex:1" onclick="BK.step=4;renderBooking()">Continue to payment</button></div>';
+  }
+  return '<div class="glass" style="padding:20px">'+
+    '<h3>Are you coming with a crew?</h3>'+
+    '<p style="font-size:.9rem;margin-top:8px">Start a squad, share the link with your group, and track who\'s in for the same night.</p>'+
+    '<div class="squad-opt mt">'+
+      '<button class="btn btn-primary" onclick="showSquadCreate()">Yes, start a squad</button>'+
+      '<button class="btn btn-ghost" onclick="BK.step=4;renderBooking()">No, just me</button>'+
+    '</div>'+
+    '<div id="squadCreateBox"></div>'+
+  '</div>'+
+  '<div style="display:flex;gap:10px;margin-top:18px"><button class="btn btn-ghost" onclick="BK.step=2;renderBooking()">Back</button>'+
+  '<button class="btn btn-primary" style="flex:1" onclick="BK.step=4;renderBooking()">Skip and continue</button></div>';
+}
+function showSquadCreate(){
+  var suggested=(BK.name?BK.name.split(" ")[0]+"’s":"Your")+" Garba Gang";
+  document.getElementById("squadCreateBox").innerHTML=
+    '<div class="field mt"><label for="sqName">Squad name</label><input id="sqName" class="inp" value="'+esc(suggested)+'"></div>'+
+    '<button class="btn btn-gold btn-block" onclick="createSquad()">Create squad link</button>';
+}
+function createSquad(){
+  var name=document.getElementById("sqName").value.trim()||"Garba Gang";
+  var code=Math.random().toString(36).slice(2,8).toUpperCase();
+  var leader={name:BK.name||"Squad leader",email:BK.email||"",whatsapp:BK.phone||""};
+  S.squads[code]={code:code,name:name,eventId:BK.eventId,leader:leader,
+    members:[{name:leader.name,email:leader.email,whatsapp:leader.whatsapp,joinedAt:new Date().toISOString()}],
+    accessId:null,checkedIn:false,checkedInAt:null,createdAt:new Date().toISOString()};
+  save(); BK.squadCode=code; renderBooking();
+}
+function squadLinkFor(code){ return location.origin+location.pathname+"#/squad/"+code; }
+function copySquadLink(code){
+  var link=squadLinkFor(code);
+  if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(link).then(function(){ toast("Squad link copied — share it on WhatsApp."); });
+  else toast("Copy blocked — select the link text manually.");
+}
+var MAX_SQUAD_SIZE=12;
+function vSquad(code){
+  var sq=S.squads[code];
+  if(!sq) return '<div class="wrap sec"><h1>Squad link not found</h1><p class="mt">This link isn\'t valid, or it was created on a different device — squads only track joins on the browser that made them in this demo.</p><a class="btn btn-ghost mt" href="#/">← Back home</a></div>';
+  ensureAccessCard(sq);
+  var evt=S.events.filter(function(e){return e.id===sq.eventId;})[0];
+  var n=sq.members.length, unlocked=!!sq.accessId, full=n>=MAX_SQUAD_SIZE;
+  if(unlocked) setGuestlistCandidate(sq.leader.name,sq.leader.email,sq.leader.whatsapp);
+  return '<div class="wrap sec"><div class="glass" style="padding:clamp(22px,4vw,36px);max-width:640px;margin-inline:auto">'+
+    '<span class="pill'+(unlocked?' gold':'')+'">'+(sq.revoked?'⛔ Revoked':unlocked?'★ Perk unlocked':'Squad forming')+'</span>'+
+    '<h1 class="mt">'+esc(sq.name)+'</h1>'+
+    (evt?'<p>Booking together for <b style="color:#fff">'+esc(evt.name)+'</b> — '+esc(evt.date)+'</p>':'')+
+    (sq.revoked?'<div class="note" style="margin-top:14px">This squad\'s Access Card has been revoked by the organiser and can no longer be used for gate entry. Contact '+esc(S.settings.email)+' if this looks wrong.</div>':'')+
+    '<div class="bar mt"><i style="width:'+Math.min(100,n/4*100)+'%"></i></div>'+
+    '<p style="font-size:.85rem;color:var(--muted-2);margin-top:6px">'+n+' of 4 joined'+(unlocked?" — priority entry lane and a digital group pass badge are unlocked for everyone here.":" — once 4 join, the whole squad gets a priority entry lane and a digital group pass badge.")+'</p>'+
+    '<div class="squad-members">'+sq.members.map(function(m){return '<span class="tag">'+esc(m.name)+'</span>';}).join("")+'</div>'+
+    (unlocked&&!sq.revoked?'<div class="mt">'+accessCardHTML(sq)+'</div>'+guestlistButtonHTML():'')+
+    (full?
+      '<div class="note info mt">This squad has reached its '+MAX_SQUAD_SIZE+'-person limit and isn\'t accepting new joins. Start your own squad from a fresh booking instead.</div>'
+      :'<h3 class="mt">Join this squad</h3>'+
+      '<p style="font-size:.82rem;color:var(--muted-2)">We ask for a name, email and WhatsApp number so your pass and any squad perks reach the right person.</p>'+
+      '<div class="two"><div class="field"><label for="sqJoinName">Your name</label><input id="sqJoinName" class="inp"></div>'+
+      '<div class="field"><label for="sqJoinEmail">Your email</label><input id="sqJoinEmail" class="inp" type="email"></div></div>'+
+      '<div class="field"><label for="sqJoinWA">Your WhatsApp number</label><input id="sqJoinWA" class="inp" inputmode="numeric" placeholder="10-digit number"></div>'+
+      '<div class="err" id="sqJoinErr"></div>'+
+      '<button class="btn btn-primary" onclick="joinSquad(\''+code+'\')">Join this squad</button>')+
+    (evt?' <button class="btn btn-gold" onclick="openBooking(\''+sq.eventId+'\',false,\''+code+'\')">Book your pass</button>':'')+
+    '<div class="note info mt">This link only tracks joins within this same browser — real cross-phone tracking, like the WhatsApp send and payment steps elsewhere on the site, needs a small shared backend. Ask when you\'re ready to make it live for real groups.</div>'+
+  '</div></div>';
+}
+function joinSquad(code){
+  var name=document.getElementById("sqJoinName").value.trim();
+  var email=document.getElementById("sqJoinEmail").value.trim();
+  var wa=normalizePhone10(document.getElementById("sqJoinWA").value);
+  var errEl=document.getElementById("sqJoinErr");
+  var sq=S.squads[code]; if(!sq) return;
+  if(sq.members.length>=MAX_SQUAD_SIZE) return showErr(errEl,"This squad is already full (max "+MAX_SQUAD_SIZE+").");
+  if(!isValidName(name)) return showErr(errEl,"Add your name.");
+  if(!isValidEmail(email)) return showErr(errEl,"Enter a valid email.");
+  if(wa.length!==10) return showErr(errEl,"Enter a valid 10-digit WhatsApp number.");
+  if(sq.members.some(function(m){return m.email.toLowerCase()===email.toLowerCase();})) return showErr(errEl,"You're already part of this squad!");
+  sq.members.push({name:name,email:email,whatsapp:wa,joinedAt:new Date().toISOString()});
+  ensureAccessCard(sq);
+  save();
+  setGuestlistCandidate(name,email,wa);
+  route();
+}
+var DEMO_NAMES=["Riya","Kunal","Meera","Dev","Anaya","Yash","Priya","Aarav"];
+function simulateJoin(code){
+  var sq=S.squads[code]; if(!sq) return;
+  if(sq.members.length>=MAX_SQUAD_SIZE){ toast("This squad is already full."); return; }
+  var nm=DEMO_NAMES[sq.members.length%DEMO_NAMES.length];
+  sq.members.push({name:nm+" (demo)",email:nm.toLowerCase()+"+"+sq.code.toLowerCase()+"@example.com",whatsapp:"98000"+(1000+sq.members.length),joinedAt:new Date().toISOString()});
+  ensureAccessCard(sq);
+  save(); renderBooking();
+  if(sq.accessId) toast("Squad perk unlocked — priority lane + group Access Card!");
+}
+/* ---------- access card (cryptographically random token) ---------- */
+function secureToken(prefix,bytes){
+  var arr=new Uint8Array(bytes||10);
+  if(window.crypto&&window.crypto.getRandomValues) window.crypto.getRandomValues(arr);
+  else for(var i=0;i<arr.length;i++) arr[i]=Math.floor(Math.random()*256);
+  var hex=Array.prototype.map.call(arr,function(x){return x.toString(16).padStart(2,"0");}).join("");
+  return prefix+hex;
+}
+function ensureAccessCard(sq){
+  if(sq.members.length>=4 && !sq.accessId){
+    sq.accessId=secureToken("mng_sec_",10);
+    sq.checkedIn=false; sq.checkedInAt=null;
+    save();
+  }
+}
+function accessCardHTML(sq){
+  if(!sq.accessId) return "";
+  return '<div class="access-card">'+
+    '<div class="ac-top">[ ACCESS CARD // MNG ]</div>'+
+    '<div class="ac-qr" id="acQR_'+sq.code+'"></div>'+
+    '<div class="ac-squad">'+esc(sq.name)+'</div>'+
+    '<div class="ac-meta"><span>'+sq.members.length+' members</span><span>'+(sq.checkedIn?'✅ Checked in':'Not checked in yet')+'</span></div>'+
+    '<div class="ac-token">'+esc(sq.accessId)+'</div>'+
+    '<div class="ac-foot">Priority entry lane · Mars Nova Global</div>'+
+  '</div>'+
+  '<button class="btn btn-squad btn-block mt" onclick="downloadAccessCard(\''+sq.code+'\')">Download Access Card</button>';
+}
+function qrPatternOnCanvas(ctx,text,x,y,size){
+  var n=21,cell=size/n,h=0;
+  for(var i=0;i<text.length;i++) h=(h*31+text.charCodeAt(i))>>>0;
+  ctx.fillStyle="#fff"; ctx.fillRect(x,y,size,size);
+  ctx.fillStyle="#000";
+  for(var r=0;r<n;r++) for(var q=0;q<n;q++){ h=(h*1103515245+12345)>>>0; if((h>>16&1)) ctx.fillRect(x+q*cell,y+r*cell,cell+.5,cell+.5); }
+}
+function wrapCanvasText(ctx,text,cx,y,maxWidth,lineHeight){
+  var words=String(text).split(" "), line="", lines=[];
+  for(var i=0;i<words.length;i++){
+    var test=line?line+" "+words[i]:words[i];
+    if(ctx.measureText(test).width>maxWidth && line){ lines.push(line); line=words[i]; } else line=test;
+  }
+  if(line) lines.push(line);
+  lines.forEach(function(l,idx){ ctx.fillText(l,cx,y+idx*lineHeight); });
+  return lines.length;
+}
+function downloadAccessCard(code){
+  var sq=S.squads[code]; if(!sq||!sq.accessId){ toast("This squad hasn't unlocked its access card yet."); return; }
+  var c=document.createElement("canvas"); c.width=720; c.height=1280;
+  var x=c.getContext("2d");
+  var g=x.createLinearGradient(0,0,720,1280);
+  g.addColorStop(0,"#1a1140"); g.addColorStop(.55,"#0d1a3e"); g.addColorStop(1,"#04060f");
+  x.fillStyle=g; x.fillRect(0,0,720,1280);
+  x.strokeStyle="rgba(176,107,255,.7)"; x.lineWidth=5; x.strokeRect(22,22,676,1236);
+  x.textAlign="center";
+  x.fillStyle="#c9a9ff"; x.font="700 28px Arial, sans-serif";
+  x.fillText("[ ACCESS CARD // MNG ]",360,110);
+  x.fillStyle="#ffffff"; x.font="800 46px Arial, sans-serif";
+  var lines=wrapCanvasText(x,sq.name,360,200,560,54);
+  var afterTitleY=200+(lines-1)*54+70;
+  x.fillStyle="#cdb8ff"; x.font="600 26px Arial, sans-serif";
+  x.fillText(sq.members.length+" members joined",360,afterTitleY);
+  qrPatternOnCanvas(x,sq.accessId,260,afterTitleY+40,200);
+  x.fillStyle="#8ef0ff"; x.font="600 18px monospace";
+  x.fillText(sq.accessId,360,afterTitleY+40+200+46);
+  x.fillStyle="#94a6cf"; x.font="500 20px Arial, sans-serif";
+  x.fillText("Priority entry lane · Mars Nova Global",360,1210);
+  var url=c.toDataURL("image/png");
+  var a=document.createElement("a"); a.href=url; a.download="MNG-AccessCard-"+sq.code+".png";
+  document.body.appendChild(a); a.click(); a.remove();
+  toast("Access card downloaded.");
+}
+
+/* ---------- MNG // Secret Guestlist ---------- */
+var GUESTLIST_CANDIDATE=null;
+function setGuestlistCandidate(name,email,whatsapp){ if(email) GUESTLIST_CANDIDATE={name:name,email:email,whatsapp:whatsapp}; }
+function guestlistButtonHTML(){
+  if(!GUESTLIST_CANDIDATE) return "";
+  return '<button class="btn btn-squad btn-block mt" onclick="joinGuestlist()">✦ Join MNG // Secret Guestlist</button>'+
+    '<p style="font-size:.78rem;color:var(--muted-2);margin-top:8px;text-align:center">Insider event drops, unlisted discount vouchers, and secret perks — members only.</p>';
+}
+function joinGuestlist(){
+  var c=GUESTLIST_CANDIDATE; if(!c||!c.email){ toast("We need an email to add you."); return; }
+  var exists=S.guestlist.some(function(g){return g.email===c.email;});
+  if(!exists){ S.guestlist.push({name:c.name||"",email:c.email,whatsapp:c.whatsapp||"",joinedAt:new Date().toISOString()}); save(); }
+  toast("You're on the list"+(c.name?", "+c.name.split(" ")[0]:"")+" — insider drops incoming.");
+}
+
+/* ---------- MNG Gate Scanner ---------- */
+var GATE_AUTH=false, GATE_LOG=[];
+function vGate(){
+  if(!GATE_AUTH) return '<div class="wrap sec" style="max-width:420px"><h1>MNG Gate Scanner</h1><p class="mt">Staff only. Enter the gate PIN to continue.</p>'+
+    '<div class="glass mt" style="padding:24px"><div class="field"><label for="gatePin">PIN</label><input id="gatePin" class="inp" type="password" inputmode="numeric" onkeypress="if(event.key===\'Enter\')gateLogin()"></div>'+
+    '<div class="err" id="gateErr"></div><button class="btn btn-primary btn-block" onclick="gateLogin()">Unlock scanner</button></div></div>';
+  return '<div class="wrap sec" style="max-width:480px">'+
+    '<div style="display:flex;justify-content:space-between;align-items:center"><h1>Gate Scanner</h1><button class="btn btn-ghost btn-sm" onclick="GATE_AUTH=false;route()">Lock</button></div>'+
+    '<p class="mt" style="font-size:.9rem">A handheld QR scanner types straight into this box — or type/paste the code yourself, then hit Enter.</p>'+
+    '<div class="glass mt" style="padding:20px"><div class="field"><label for="gateCode">Access Card code</label>'+
+    '<input id="gateCode" class="inp" autocomplete="off" placeholder="mng_sec_..." onkeypress="if(event.key===\'Enter\')gateCheckIn()"></div>'+
+    '<button class="btn btn-primary btn-block" onclick="gateCheckIn()">Check in</button></div>'+
+    '<div id="gateResult" class="mt"></div>'+
+    '<h3 class="mt">Recent scans</h3><div id="gateLog" class="mt">'+renderGateLog()+'</div>'+
+  '</div>';
+}
+function gateLogin(){
+  var v=document.getElementById("gatePin").value;
+  if(v===String(S.settings.pin)){ GATE_AUTH=true; route(); }
+  else showErr(document.getElementById("gateErr"),"Wrong PIN.");
+}
+function renderGateLog(){
+  if(!GATE_LOG.length) return '<p style="color:var(--muted-2);font-size:.85rem">No scans yet this session.</p>';
+  return GATE_LOG.slice(0,8).map(function(g){ return '<div class="row" style="justify-content:space-between"><span style="font-family:monospace;font-size:.78rem">'+esc(g.code)+'</span><span class="tag" style="color:'+(g.ok?'#8ef0b8':'#ff9aa8')+'">'+esc(g.msg)+'</span></div>'; }).join("");
+}
+function findSquadByAccessId(code){
+  var norm=String(code||"").trim().toLowerCase();
+  var keys=Object.keys(S.squads);
+  for(var i=0;i<keys.length;i++){ if(S.squads[keys[i]].accessId && S.squads[keys[i]].accessId.toLowerCase()===norm) return S.squads[keys[i]]; }
+  return null;
+}
+function gateCheckIn(){
+  var input=document.getElementById("gateCode"), code=input.value.trim(), panel=document.getElementById("gateResult");
+  if(!code) return;
+  var sq=findSquadByAccessId(code);
+  if(!sq){
+    panel.innerHTML='<div class="gate-panel gate-bad"><div class="gate-big" style="color:#ff9aa8">NOT FOUND</div><p>No squad access card matches this code.</p></div>';
+    GATE_LOG.unshift({code:code,ok:false,msg:"Not found"});
+  } else if(sq.revoked){
+    panel.innerHTML='<div class="gate-panel gate-dupe"><div class="gate-big" style="color:#ff6b81">⛔ ACCESS REVOKED</div><p>'+esc(sq.name)+'\'s access card was revoked by the organiser and is no longer valid.</p></div>';
+    GATE_LOG.unshift({code:code,ok:false,msg:"Revoked — "+sq.name});
+  } else if(sq.checkedIn){
+    panel.innerHTML='<div class="gate-panel gate-dupe"><div class="gate-big" style="color:#ff6b81">⚠ ALREADY CHECKED IN</div><p>'+esc(sq.name)+' was checked in at '+new Date(sq.checkedInAt).toLocaleTimeString("en-IN")+'.</p></div>';
+    GATE_LOG.unshift({code:code,ok:false,msg:"Duplicate — "+sq.name});
+  } else {
+    sq.checkedIn=true; sq.checkedInAt=new Date().toISOString(); save();
+    panel.innerHTML='<div class="gate-panel gate-ok"><div class="gate-big" style="color:#3ddc97">✔ ACCESS GRANTED</div><p>'+esc(sq.name)+' · '+sq.members.length+' members</p></div>';
+    GATE_LOG.unshift({code:code,ok:true,msg:"Granted — "+sq.name});
+  }
+  document.getElementById("gateLog").innerHTML=renderGateLog();
+  input.value=""; input.focus();
+}
+function bkStep3(){
+  if(!BACKEND_URL) return bkStep3Demo();
+  return '<div style="text-align:center">'+
+   '<div class="total" style="margin-top:0"><span>Amount to pay</span><span class="amt">'+rupee(bkTotal())+'</span></div>'+
+   '<p style="font-size:.9rem">Tap below to pay securely with UPI, card, or netbanking via Razorpay. Your pass is issued the instant payment is verified.</p>'+
+   '<div class="err" id="payErr"></div>'+
+   '<button class="btn btn-primary btn-block" id="payBtn" onclick="startRealPayment(this)">Pay '+rupee(bkTotal())+' now</button>'+
+   '</div>'+
+   '<div class="note info">Payments are verified on our server before any pass is issued — this is real, not a simulation. If you haven\'t added your real Razorpay keys yet, this will show a Razorpay error, which is expected.</div>'+
+   '<div style="display:flex;gap:10px;margin-top:14px"><button class="btn btn-ghost" onclick="BK.step=3;renderBooking()">Back</button></div>';
+}
+function startRealPayment(btn){
+  var errEl=document.getElementById("payErr"); 
+  if (errEl) errEl.classList.remove("on");
+  btn.disabled=true; 
+  btn.textContent="Contacting payment server...";
+  
+  var e=ev(), pass=e.passes[BK.passIdx];
+  var currentQty = Number(BK.qty) || 1;
+
+fetch(BACKEND_URL+"/api/create-order",{
+    method:"POST", 
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      eventId: e.id, 
+      passName: pass.n, 
+      qty: currentQty,
+      amount: bkTotal() // Sends the total calculated amount to the backend
+    })
+  }).then(function(r){ return r.json(); }).then(function(data){
+    if(data.error){ 
+      btn.disabled=false; 
+      btn.textContent="Pay "+rupee(bkTotal());
+      if (errEl) { errEl.textContent = data.error; errEl.classList.add("on"); }
+      return;
+    }
+    var rzp=new Razorpay({
+      key: data.key, 
+      amount: data.amount, // Razorpay order amount from backend is already in paisa
+      currency: "INR",
+      name: "Mars Nova Global", 
+      description: e.name + " - " + pass.n + " (x" + currentQty + ")",
+      order_id: data.orderId,
+      handler: function(res){
+        verifyPayment(res, e.id, pass.n, currentQty);
+      }
+    });
+    });
+    rzp.open();
+  }).catch(function(err){
+    btn.disabled=false;
+    btn.textContent="Pay "+rupee(bkTotal());
+    if (errEl) { errEl.textContent = "Payment initialization failed. Try again."; errEl.classList.add("on"); }
+  });
+}
+function verifyRealPayment(response){
+  var e=ev(), pass=e.passes[BK.passIdx];
+  fetch(BACKEND_URL+"/api/verify-payment",{
+    method:"POST", headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      razorpay_order_id:response.razorpay_order_id,
+      razorpay_payment_id:response.razorpay_payment_id,
+      razorpay_signature:response.razorpay_signature,
+      eventId:e.id, passName:pass.n, qty:BK.qty,
+      buyerName:BK.name, buyerEmail:BK.email, buyerWhatsapp:BK.phone,
+      squadCode:BK.squadCode||null,
+      agentId:(BK.agentSale&&AGENT)?AGENT.id:null,
+      channel:(BK.agentSale&&AGENT)?"Agent":"Website"
+    })
+  }).then(function(r){ return r.json(); }).then(function(data){
+    if(!data.ok){ toast("Payment could not be verified: "+(data.error||"unknown error")); return; }
+    BK.code=data.code;
+    var rec={code:BK.code,event:e.name,eventId:e.id,place:e.place,date:e.date,time:e.time,pass:pass.n,
+      qty:BK.qty,rate:Number(pass.p),amount:bkTotal(),name:BK.name,phone:BK.phone,email:BK.email,whatsapp:BK.phone,
+      status:"Issued",bookedAt:new Date().toISOString(),
+      channel:(BK.agentSale&&AGENT)?"Agent":"Website",
+      agentId:(BK.agentSale&&AGENT)?AGENT.id:null, agentName:(BK.agentSale&&AGENT)?AGENT.name:null,
+      squadCode:BK.squadCode||null, squadName:(BK.squadCode&&S.squads[BK.squadCode])?S.squads[BK.squadCode].name:null};
+    S.bookings.push(rec);
+    e.sold=Number(e.sold)+BK.qty; if(e.sold>e.capacity) e.sold=e.capacity;
+    save(); pushToSheet("booking",rec);
+    clearBKDraft();
+    BK.step=5; renderBooking();
+  }).catch(function(err){
+    console.error(err);
+    toast("Payment succeeded but we couldn't confirm it with our server. Contact support with your payment ID: "+response.razorpay_payment_id);
+  });
+}
+function bkStep3Demo(){
+  return '<div style="display:flex;gap:22px;flex-wrap:wrap;align-items:center;justify-content:center;text-align:center">'+
+   '<div class="qrbox" id="payQR" style="width:180px;height:180px"></div>'+
+   '<div style="flex:1;min-width:210px;text-align:left">'+
+     '<div class="total" style="margin-top:0"><span>Amount</span><span class="amt">'+rupee(bkTotal())+'</span></div>'+
+     '<p style="font-size:.9rem">Scan with any UPI app, or pay to <b style="color:#fff">marsnovaglobal@upi</b>. Your pass is issued the moment payment is confirmed.</p>'+
+     '<div style="display:flex;gap:8px;flex-wrap:wrap">'+["GPay","PhonePe","Paytm","BHIM"].map(function(x){return '<span class="tag">'+x+'</span>';}).join("")+'</div>'+
+   '</div></div>'+
+   '<div class="note info">Demo mode — no BACKEND_URL is set, so no money moves. Set BACKEND_URL near the top of the script to switch on real payments.</div>'+
+   '<div style="display:flex;gap:10px"><button class="btn btn-ghost" onclick="BK.step=3;renderBooking()">Back</button>'+
+   '<button class="btn btn-primary" style="flex:1" onclick="confirmPayDemo(this)">I have paid — issue my pass</button></div>';
+}
+function confirmPayDemo(btn){
+  btn.disabled=true; btn.textContent="Verifying payment…";
+  setTimeout(function(){
+    var e=ev(), pass=e.passes[BK.passIdx];
+    BK.code="MNG-"+(e.id.toUpperCase())+"-"+Math.random().toString(36).slice(2,7).toUpperCase()+"-"+Date.now().toString(36).slice(-4).toUpperCase();
+    var rec={code:BK.code,event:e.name,eventId:e.id,place:e.place,date:e.date,time:e.time,pass:pass.n,
+      qty:BK.qty,rate:Number(pass.p),amount:bkTotal(),name:BK.name,phone:BK.phone,email:BK.email,whatsapp:BK.phone,
+      status:"Issued",bookedAt:new Date().toISOString(),
+      channel:(BK.agentSale&&AGENT)?"Agent":"Website",
+      agentId:(BK.agentSale&&AGENT)?AGENT.id:null, agentName:(BK.agentSale&&AGENT)?AGENT.name:null,
+      squadCode:BK.squadCode||null, squadName:(BK.squadCode&&S.squads[BK.squadCode])?S.squads[BK.squadCode].name:null};
+    S.bookings.push(rec);
+    e.sold=Number(e.sold)+BK.qty; if(e.sold>e.capacity) e.sold=e.capacity;
+    save(); pushToSheet("booking",rec);
+    clearBKDraft();
+    BK.step=5; renderBooking();
+  },1300);
+}
+function bkStep4(){
+  var e=ev(), p=e.passes[BK.passIdx];
+  var sq=BK.squadCode?S.squads[BK.squadCode]:null;
+  var unlocked=false;
+  if(sq){ ensureAccessCard(sq); unlocked=!!sq.accessId; if(unlocked) setGuestlistCandidate(sq.leader.name,sq.leader.email,sq.leader.whatsapp); }
+  return '<div class="ticket"><div class="ticket-top"><h3>'+esc(e.name)+'</h3><span class="pill" style="margin:0">'+esc(p.n)+'</span></div>'+
+   '<div class="ticket-mid"><div class="qrbox" id="passQR"></div>'+
+   '<div class="tinfo"><div><small>Pass code</small><b>'+esc(BK.code)+'</b></div>'+
+   '<div><small>Name</small><b>'+esc(BK.name)+'</b></div>'+
+   '<div><small>Quantity</small><b>'+BK.qty+'</b></div><div><small>Paid</small><b>'+rupee(bkTotal())+'</b></div>'+
+   '<div><small>Dates</small><b>'+esc(e.date)+'</b></div><div><small>Gate</small><b>'+esc(e.time)+'</b></div></div></div>'+
+   '<div class="ticket-bot">One scan, one entry · Non-transferable · Non-refundable'+(sq?' · Squad: '+esc(sq.name)+' ('+sq.members.length+' joined)':'')+'</div></div>'+
+   (unlocked?'<div class="mt"><div class="note info" style="border-color:rgba(176,107,255,.5);background:rgba(176,107,255,.1)">🎉 Your squad hit '+sq.members.length+' members — your group Access Card is ready.</div>'+
+     '<div class="mt">'+accessCardHTML(sq)+'</div>'+guestlistButtonHTML()+'</div>':'')+
+   '<div class="glass mt" style="padding:18px">'+
+     '<h3 style="font-size:1rem">Send this pass on WhatsApp</h3>'+
+     '<p style="font-size:.85rem;margin:6px 0 12px">Confirm the number the pass should go to — often the same as their mobile, sometimes not.</p>'+
+     '<div class="two"><div class="field" style="margin-bottom:8px"><label for="waNum">WhatsApp number</label><input id="waNum" class="inp" inputmode="numeric" value="'+esc(BK.phone)+'" placeholder="10-digit number"></div>'+
+     '<div class="field" style="margin-bottom:8px"><label for="waCC">Country code</label><input id="waCC" class="inp" value="91" style="max-width:100px"></div></div>'+
+     '<div class="err" id="waErr"></div>'+
+     '<button class="btn btn-gold btn-block" onclick="sendPassOnWhatsApp(\''+BK.code+'\')">Open WhatsApp and send pass</button>'+
+   '</div>'+
+   '<div class="note info">This opens WhatsApp with the pass details already typed into a message to that number — you just hit send there. Sending it automatically, with no click, needs a WhatsApp Business API account and a server; ask when you\'re ready to set that up.</div>'+
+   '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-ghost" onclick="closeBooking();go('+(BK.agentSale?"'agent'":"'passes'")+')">'+(BK.agentSale?"Back to agent desk":"See my passes")+'</button>'+
+   '<button class="btn btn-primary" style="flex:1" onclick="closeBooking()">Done</button></div>';
+}
+function waMessageFor(b){
+  return "Your Mars Nova Global pass\n"+b.event+" — "+b.pass+"\nPass code: "+b.code+"\nQty: "+b.qty+" | Paid: "+rupee(b.amount)+
+    "\nDate: "+b.date+" | Gate: "+b.time+
+    "\nShow this code (and the QR from the site) at the gate. One scan, one entry.";
+}
+function sendPassOnWhatsApp(code){
+  var num=normalizePhone10(document.getElementById("waNum").value), cc=document.getElementById("waCC").value.replace(/\D/g,"")||"91", e=document.getElementById("waErr");
+  if(num.length!==10) return showErr(e,"Enter a valid 10-digit WhatsApp number.");
+  var b=S.bookings.filter(function(x){return x.code===code;})[0];
+  if(b){ b.whatsapp=cc+num; save(); }
+  window.open("https://wa.me/"+cc+num+"?text="+encodeURIComponent(b?waMessageFor(b):""),"_blank");
+  e.classList.remove("on"); toast("WhatsApp opened — hit send there to deliver the pass.");
+}
+function resendOnWhatsApp(code){
+  var b=S.bookings.filter(function(x){return x.code===code;})[0]; if(!b) return;
+  var existing=b.whatsapp||b.phone||"";
+  mngPrompt("Send this pass to which WhatsApp number? (include country code, e.g. 91XXXXXXXXXX)",existing,function(num){
+    if(!num) return;
+    var d=num.replace(/\D/g,"");
+    if(normalizePhone10(num).length!==10 && d.length<10){ toast("That doesn't look like a valid number."); return; }
+    b.whatsapp=d; save();
+    window.open("https://wa.me/"+d+"?text="+encodeURIComponent(waMessageFor(b)),"_blank");
+  });
+}
+
+/* ---------- inquiry ---------- */
+function sendInquiry(){
+  var n=document.getElementById("ciName").value.trim(),
+      p=normalizePhone10(document.getElementById("ciPhone").value),
+      m=document.getElementById("ciMail").value.trim(),
+      s=document.getElementById("ciSvc").value, g=document.getElementById("ciMsg").value.trim(),
+      e=document.getElementById("ciErr");
+  if(!isValidName(n)) return showErr(e,"Tell us who you are.");
+  if(p.length!==10) return showErr(e,"Enter a valid 10-digit mobile number.");
+  if(!isValidEmail(m)) return showErr(e,"Enter a valid email address.");
+  if(g.length<5) return showErr(e,"Add a line about what you need.");
+  var rec={name:n,phone:p,email:m,service:s,message:g,at:new Date().toISOString()};
+  S.inquiries.push(rec); save(); pushToSheet("inquiry",rec);
+  e.classList.remove("on");
+  document.getElementById("ciName").value=document.getElementById("ciPhone").value=document.getElementById("ciMail").value=document.getElementById("ciMsg").value="";
+  toast("Enquiry received. The desk will call you on "+p+".");
+}
+
+/* ============================================================
+   ADMIN
+   ============================================================ */
+var ADM={in:false,tab:"events"};
+function openAdmin(){ 
+  var pin = prompt("Enter Admin PIN:");
+  if (pin === String(S.settings.pin)) {
+    ADM.in = true;
+    document.getElementById("admModal").classList.add("on"); 
+    document.body.style.overflow="hidden"; 
+    renderAdmin(); 
+  } else if (pin !== null) {
+    alert("Incorrect PIN. Access denied.");
+  }
+}
+
+function closeAdmin(){ 
+  document.getElementById("admModal").classList.remove("on"); 
+  document.body.style.overflow=""; 
+  route(); 
+}
+
+function renderAdmin(){
+  var b=document.getElementById("admBody");
+  if(!ADM.in){
+    b.innerHTML='<p>Enter the admin PIN to change rates, pass types, venues and featured events.</p>'+
+      '<div class="field" style="max-width:260px"><label for="pin">Admin PIN</label><input id="pin" class="inp" type="password" inputmode="numeric" placeholder="••••" onkeypress="if(event.key===\'Enter\')tryPin()"></div>'+
+      '<div class="err" id="pinErr"></div><button class="btn btn-primary" onclick="tryPin()">Unlock</button>';
+    return;
+  }
+  var tabs=[["events","Events & rates"],["featured","Featured banner"],["logocenter","Logo center"],["partners","Footer partners"],["blog","Blog"],["squads","Squads & Communities"],["agents","Agents"],["bookings","Bookings"],["inquiries","Enquiries"],["settings","Settings"]];
+  b.innerHTML='<div class="adm-tabs">'+tabs.map(function(t){return '<button class="adm-tab'+(ADM.tab===t[0]?' on':'')+'" onclick="ADM.tab=\''+t[0]+'\';renderAdmin()">'+t[1]+'</button>';}).join("")+'</div><div id="admPane"></div>';
+  var pane=document.getElementById("admPane");
+  pane.innerHTML = ADM.tab==="events"?admEvents():ADM.tab==="featured"?admFeatured():ADM.tab==="logocenter"?admLogoCenter():ADM.tab==="partners"?admPartners():ADM.tab==="blog"?admBlog():ADM.tab==="squads"?admSquads():ADM.tab==="agents"?admAgents():ADM.tab==="bookings"?admBookings():ADM.tab==="inquiries"?admInquiries():admSettings();
+}
+
+function tryPin(){
+  var v=document.getElementById("pin").value;
+  if(v===String(S.settings.pin)){ ADM.in=true; renderAdmin(); }
+  else showErr(document.getElementById("pinErr"),"Wrong PIN. Try again.");
+}
+function admEvents(){
+  return S.events.map(function(e,i){
+    var sold=isSold(e);
+    return '<div class="glass" style="padding:18px;margin-bottom:16px">'+
+      '<div style="display:flex;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap">'+
+      '<h3 style="flex:1;min-width:150px">'+esc(e.name)+'</h3>'+
+      '<span class="tag" style="color:'+(sold?'#ff9aa8':'#8ef0b8')+'">'+(sold?'Sold out':'Booking open')+'</span>'+
+      '<button class="btn btn-ghost btn-sm" onclick="delEvent('+i+')">Delete</button></div>'+
+      '<div class="two"><div class="field"><label>Name</label><input class="inp" value="'+esc(e.name)+'" oninput="setEv('+i+',\'name\',this.value)"></div>'+
+      '<div class="field"><label>Location</label><input class="inp" value="'+esc(e.place)+'" oninput="setEv('+i+',\'place\',this.value)"></div></div>'+
+      '<div class="two"><div class="field"><label>Dates</label><input class="inp" value="'+esc(e.date)+'" oninput="setEv('+i+',\'date\',this.value)"></div>'+
+      '<div class="field"><label>Timings</label><input class="inp" value="'+esc(e.time)+'" oninput="setEv('+i+',\'time\',this.value)"></div></div>'+
+      '<div class="field"><label>Description</label><textarea class="inp" style="min-height:70px" oninput="setEv('+i+',\'desc\',this.value)">'+esc(e.desc)+'</textarea></div>'+
+      '<div class="two"><div class="field"><label>Tags (comma separated)</label><input class="inp" value="'+esc((e.tags||[]).join(", "))+'" oninput="setTags('+i+',this.value)"></div>'+
+      '<div class="field"><label>Rating</label><input class="inp" type="number" step="0.1" min="0" max="5" value="'+esc(e.rating)+'" oninput="setEv('+i+',\'rating\',this.value)"></div></div>'+
+      '<div class="two"><div class="field"><label>Total capacity</label><input class="inp" type="number" min="0" value="'+esc(e.capacity)+'" oninput="setEv('+i+',\'capacity\',Number(this.value))"></div>'+
+      '<div class="field"><label>Passes sold</label><input class="inp" type="number" min="0" value="'+esc(e.sold)+'" oninput="setEv('+i+',\'sold\',Number(this.value))"></div></div>'+
+      '<div class="two"><div class="field"><label>Card artwork</label><select class="inp" onchange="setEv('+i+',\'art\',Number(this.value))">'+
+        ART.map(function(a,k){return '<option value="'+k+'"'+(Number(e.art)===k?' selected':'')+'>Preset '+(k+1)+'</option>';}).join("")+'</select></div>'+
+      '<div class="field"><label>Poster image</label><input class="inp" type="file" accept="image/*" onchange="uploadImg(event,'+i+')"></div></div>'+
+      (e.img?'<button class="btn btn-ghost btn-sm" style="margin-bottom:12px" onclick="setEv('+i+',\'img\',\'\');renderAdmin()">Remove uploaded image</button>':'')+
+      '<div class="row" style="background:rgba(37,215,240,.08)"><label style="display:flex;gap:9px;align-items:center;font-weight:700;cursor:pointer">'+
+      '<input type="checkbox" '+(e.manualSold?"checked":"")+' onchange="setEv('+i+',\'manualSold\',this.checked)" style="width:18px;height:18px"> Force this ground to “Sold out”</label></div>'+
+      '<h4 style="font-family:Sora;margin:16px 0 8px">Pass types and rates</h4>'+
+      e.passes.map(function(p,j){ return '<div class="row">'+
+        '<input class="inp grow" value="'+esc(p.n)+'" placeholder="Pass name" oninput="setPass('+i+','+j+',\'n\',this.value)">'+
+        '<input class="inp grow" value="'+esc(p.d||"")+'" placeholder="What it includes" oninput="setPass('+i+','+j+',\'d\',this.value)">'+
+        '<input class="inp" style="width:120px" type="number" min="0" value="'+esc(p.p)+'" oninput="setPass('+i+','+j+',\'p\',Number(this.value))">'+
+        '<button class="btn btn-ghost btn-sm" onclick="delPass('+i+','+j+')">Remove</button></div>'; }).join("")+
+      '<button class="btn btn-ghost btn-sm" onclick="addPass('+i+')">+ Add pass type</button>'+
+    '</div>';
+  }).join("")+'<button class="btn btn-primary" onclick="addEvent()">+ Add a new ground</button>';
+}
+function setEv(i,k,v){ S.events[i][k]=v; save(); if(k==="manualSold"||k==="img"||k==="art") renderAdmin(); }
+function setTags(i,v){ S.events[i].tags=v.split(",").map(function(t){return t.trim();}).filter(Boolean); save(); }
+function setPass(i,j,k,v){ S.events[i].passes[j][k]=v; save(); }
+function addPass(i){ S.events[i].passes.push({n:"New pass",p:499,d:"Single entry"}); save(); renderAdmin(); }
+function delPass(i,j){ if(S.events[i].passes.length<2){ toast("Keep at least one pass type."); return; } S.events[i].passes.splice(j,1); save(); renderAdmin(); }
+function addEvent(){
+  S.events.push({id:uid("e"),name:"New ground",place:"Surat",date:"10–18 Oct 2026",time:"7:30 PM – 1:00 AM",rating:4.5,
+    desc:"Add a short description of this ground.",tags:["Garba"],art:S.events.length%ART.length,capacity:2000,sold:0,manualSold:false,img:"",
+    passes:[{n:"Stag",p:399,d:"Single entry, one night"},{n:"Couple",p:699,d:"Two entries, one night"}]});
+  save(); renderAdmin(); toast("Ground added.");
+}
+function delEvent(i){ mngConfirm("Delete \u201c"+S.events[i].name+"\u201d? Bookings already issued are kept.",function(){ S.events.splice(i,1); save(); renderAdmin(); }); }
+function uploadImg(e,i){
+  var f=e.target.files&&e.target.files[0]; if(!f) return;
+  if(f.size>8000000){ toast("Pick an image under 8 MB."); e.target.value=""; return; }
+  var r=new FileReader();
+  r.onload=function(){
+    openCropper(r.result,2,3,800,1200,function(dataURL){
+      S.events[i].img=dataURL; save(); renderAdmin(); toast("Poster updated.");
+    });
+  };
+  r.readAsDataURL(f);
+  e.target.value="";
+}
+function uploadLogo(e){
+  var f=e.target.files&&e.target.files[0]; if(!f) return;
+  if(f.size>8000000){ toast("Pick an image under 8 MB."); e.target.value=""; return; }
+  var r=new FileReader();
+  r.onload=function(){
+    openCropper(r.result,1,1,320,320,function(dataURL){
+      S.settings.logo=dataURL; save(); renderBrandLogo(); renderAdmin(); toast("Logo updated.");
+    });
+  };
+  r.readAsDataURL(f);
+  e.target.value="";
+}
+function removeLogo(){ S.settings.logo=null; save(); renderBrandLogo(); renderAdmin(); toast("Logo removed — using the default emblem."); }
+function renderBrandLogo(){
+  var slot=document.getElementById("emblemSlot"); if(!slot) return;
+  slot.innerHTML = S.settings.logo
+    ? '<img class="emblem-img" src="'+S.settings.logo+'" alt="Company logo">'
+    : '<svg class="emblem" viewBox="0 0 48 48" fill="none" aria-hidden="true">'+
+      '<circle cx="24" cy="24" r="21" stroke="url(#g1)" stroke-width="1.4" opacity=".5"/>'+
+      '<ellipse cx="24" cy="24" rx="21" ry="8" stroke="url(#g1)" stroke-width="1.2" opacity=".55" transform="rotate(-24 24 24)"/>'+
+      '<circle cx="24" cy="24" r="8.5" fill="url(#g2)"/>'+
+      '<path d="M24 4.5l2.4 6.6 6.6 2.4-6.6 2.4L24 22.5l-2.4-6.6-6.6-2.4 6.6-2.4z" fill="#fff" opacity=".95"/>'+
+      '<defs><linearGradient id="g1" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#25d7f0"/><stop offset="1" stop-color="#3b74ff"/></linearGradient>'+
+      '<radialGradient id="g2"><stop stop-color="#7ef0ff"/><stop offset="1" stop-color="#2f5cff"/></radialGradient></defs></svg>';
+}
+
+/* ---------- image cropper (manual drag + resize box) ---------- */
+var CROP={img:null,dispW:0,dispH:0,natW:0,natH:0,aw:1,ah:1,tw:800,th:800,onDone:null,
+  rect:{x:0,y:0,w:0,h:0}, mode:null, startX:0, startY:0, startRect:null};
+
+function openCropper(src,aw,ah,targetW,targetH,onDone){
+  CROP.aw=aw; CROP.ah=ah; CROP.tw=targetW; CROP.th=targetH; CROP.onDone=onDone;
+  var img=new Image();
+  img.onload=function(){
+    CROP.img=img; CROP.natW=img.width; CROP.natH=img.height;
+    var maxW=Math.min(460,window.innerWidth-84);
+    CROP.dispW=maxW; CROP.dispH=Math.round(maxW*img.height/img.width);
+    var frame=document.getElementById("cropFrame");
+    frame.style.width=CROP.dispW+"px"; frame.style.height=CROP.dispH+"px";
+    var im=document.getElementById("cropImg"); im.src=src;
+    centerCropBox();
+    document.getElementById("cropModal").classList.add("on");
+    document.body.style.overflow="hidden";
+  };
+  img.src=src;
+}
+function centerCropBox(){
+  var dispW=CROP.dispW, dispH=CROP.dispH, ratio=CROP.aw/CROP.ah, w,h;
+  if(dispW/dispH>ratio){ h=dispH*0.92; w=h*ratio; } else { w=dispW*0.92; h=w/ratio; }
+  CROP.rect={x:(dispW-w)/2, y:(dispH-h)/2, w:w, h:h};
+  paintCropBox();
+}
+function paintCropBox(){
+  var b=document.getElementById("cropBox");
+  b.style.left=CROP.rect.x+"px"; b.style.top=CROP.rect.y+"px";
+  b.style.width=CROP.rect.w+"px"; b.style.height=CROP.rect.h+"px";
+}
+var CROP_MIN=44;
+function anchorFor(handle){
+  var r=CROP.rect;
+  if(handle==="se") return {ax:r.x, ay:r.y};
+  if(handle==="sw") return {ax:r.x+r.w, ay:r.y};
+  if(handle==="ne") return {ax:r.x, ay:r.y+r.h};
+  return {ax:r.x+r.w, ay:r.y+r.h}; // nw
+}
+function maxWFor(handle,ax,ay){
+  var ratio=CROP.aw/CROP.ah, dispW=CROP.dispW, dispH=CROP.dispH;
+  if(handle==="se") return Math.min(dispW-ax, (dispH-ay)*ratio);
+  if(handle==="sw") return Math.min(ax, (dispH-ay)*ratio);
+  if(handle==="ne") return Math.min(dispW-ax, ay*ratio);
+  return Math.min(ax, ay*ratio); // nw
+}
+(function(){
+  function point(e){ var p=e.touches?e.touches[0]:e; return {x:p.clientX,y:p.clientY}; }
+  function down(e){
+    var h=e.target.closest && e.target.closest(".crop-h");
+    var box=e.target.closest && e.target.closest("#cropBox");
+    if(!h && !box) return;
+    CROP.mode = h ? h.getAttribute("data-h") : "move";
+    var p=point(e); CROP.startX=p.x; CROP.startY=p.y;
+    CROP.startRect={x:CROP.rect.x,y:CROP.rect.y,w:CROP.rect.w,h:CROP.rect.h};
+    e.stopPropagation(); if(e.cancelable) e.preventDefault();
+  }
+  function move(e){
+    if(!CROP.mode||!CROP.img) return;
+    var p=point(e), dx=p.x-CROP.startX, dy=p.y-CROP.startY, r=CROP.startRect;
+    if(CROP.mode==="move"){
+      var nx=r.x+dx, ny=r.y+dy;
+      nx=Math.max(0,Math.min(CROP.dispW-r.w,nx));
+      ny=Math.max(0,Math.min(CROP.dispH-r.h,ny));
+      CROP.rect={x:nx,y:ny,w:r.w,h:r.h};
+    } else {
+      var ratio=CROP.aw/CROP.ah;
+      var startRectForAnchor={x:r.x,y:r.y,w:r.w,h:r.h};
+      var tmp=CROP.rect; CROP.rect=startRectForAnchor;
+      var a=anchorFor(CROP.mode);
+      CROP.rect=tmp;
+      var maxW=maxWFor(CROP.mode,a.ax,a.ay);
+      var proposed;
+      if(CROP.mode==="se") proposed=(p.x-a.ax);
+      else if(CROP.mode==="sw") proposed=(a.ax-p.x);
+      else if(CROP.mode==="ne") proposed=(p.x-a.ax);
+      else proposed=(a.ax-p.x); // nw
+      var w=Math.max(CROP_MIN,Math.min(maxW,proposed));
+      var h=w/ratio;
+      var x,y;
+      if(CROP.mode==="se"){ x=a.ax; y=a.ay; }
+      else if(CROP.mode==="sw"){ x=a.ax-w; y=a.ay; }
+      else if(CROP.mode==="ne"){ x=a.ax; y=a.ay-h; }
+      else { x=a.ax-w; y=a.ay-h; }
+      CROP.rect={x:x,y:y,w:w,h:h};
+    }
+    paintCropBox();
+    if(e.cancelable) e.preventDefault();
+  }
+  function up(){ CROP.mode=null; }
+  document.addEventListener("mousedown",down);
+  document.addEventListener("touchstart",down,{passive:false});
+  document.addEventListener("mousemove",move);
+  document.addEventListener("touchmove",move,{passive:false});
+  document.addEventListener("mouseup",up);
+  document.addEventListener("touchend",up);
+})();
+function applyCrop(){
+  var c=document.createElement("canvas"); c.width=CROP.tw; c.height=CROP.th;
+  var x=c.getContext("2d");
+  var scale=CROP.natW/CROP.dispW;
+  var sx=CROP.rect.x*scale, sy=CROP.rect.y*scale, sw=CROP.rect.w*scale, sh=CROP.rect.h*scale;
+  x.drawImage(CROP.img,sx,sy,sw,sh,0,0,CROP.tw,CROP.th);
+  var out=c.toDataURL("image/jpeg",0.88);
+  var done=CROP.onDone;
+  closeCropModal();
+  if(done) done(out);
+}
+function cancelCrop(){ closeCropModal(); }
+function closeCropModal(){ document.getElementById("cropModal").classList.remove("on"); document.body.style.overflow=""; CROP.img=null; CROP.mode=null; }
+
+/* ---------- recover my pass ---------- */
+function openRecover(){
+  document.getElementById("recoverModal").classList.add("on");
+  document.body.style.overflow="hidden";
+  document.getElementById("recoverResults").innerHTML="";
+  var q=document.getElementById("recQuery"); q.value=""; setTimeout(function(){ q.focus(); },50);
+  var err=document.getElementById("recErr"); if(err) err.classList.remove("on");
+}
+function closeRecover(){ document.getElementById("recoverModal").classList.remove("on"); document.body.style.overflow=""; }
+function recoverLookup(){
+  var raw=document.getElementById("recQuery").value.trim(), err=document.getElementById("recErr");
+  var box=document.getElementById("recoverResults");
+  if(!raw) return showErr(err,"Enter the email or WhatsApp number you booked with.");
+  err.classList.remove("on");
+  var qEmail=raw.toLowerCase();
+  var qDigits=normalizePhone10(raw);
+  var matchesContact=function(email,whatsapp,phone){
+    if(email && email.toLowerCase()===qEmail) return true;
+    if(qDigits.length===10){
+      if(whatsapp && normalizePhone10(whatsapp)===qDigits) return true;
+      if(phone && normalizePhone10(phone)===qDigits) return true;
+    }
+    return false;
+  };
+  var bookings=S.bookings.filter(function(b){ return matchesContact(b.email,b.whatsapp,b.phone); });
+  var squads=Object.keys(S.squads).map(function(c){return S.squads[c];}).filter(function(sq){
+    if(!sq.accessId) return false;
+    if(matchesContact(sq.leader.email,sq.leader.whatsapp,null)) return true;
+    return sq.members.some(function(m){ return matchesContact(m.email,m.whatsapp,null); });
+  });
+  if(!bookings.length && !squads.length){
+    box.innerHTML='<div class="note mt">No pass found for that email or WhatsApp number. Double-check for typos, or write to <a href="mailto:'+esc(S.settings.email)+'">'+esc(S.settings.email)+'</a> and we\'ll look it up manually.</div>';
+    return;
+  }
+  var html="";
+  if(bookings.length){
+    html+='<h3 class="mt">Your passes</h3>'+bookings.map(function(b){
+      return '<div class="ticket mt"><div class="ticket-top"><h3>'+esc(b.event)+'</h3><span class="pill" style="margin:0">'+esc(b.pass)+'</span></div>'+
+      '<div class="ticket-mid"><div class="qrbox" id="recQR_'+esc(b.code)+'"></div>'+
+      '<div class="tinfo"><div><small>Pass code</small><b>'+esc(b.code)+'</b></div>'+
+      '<div><small>Name</small><b>'+esc(b.name)+'</b></div>'+
+      '<div><small>Quantity</small><b>'+b.qty+'</b></div><div><small>Paid</small><b>'+rupee(b.amount)+'</b></div>'+
+      '<div><small>Dates</small><b>'+esc(b.date)+'</b></div><div><small>Gate</small><b>'+esc(b.time)+'</b></div></div></div>'+
+      '<div style="padding:0 20px 16px"><button class="btn btn-gold btn-sm btn-block" onclick="resendOnWhatsApp(\''+b.code+'\')">Resend on WhatsApp</button></div>'+
+      '<div class="ticket-bot">Non-transferable · Non-refundable · Valid for a single entry</div></div>';
+    }).join("");
+  }
+  if(squads.length){
+    html+='<h3 class="mt">Your squad Access Cards</h3>'+squads.map(function(sq){ return '<div class="mt">'+accessCardHTML(sq)+'</div>'; }).join("");
+  }
+  box.innerHTML=html;
+  bookings.forEach(function(b){ drawQR("recQR_"+b.code,b.code); });
+  squads.forEach(function(sq){ drawQR("acQR_"+sq.code,sq.accessId); });
+}
+
+/* ---------- mobile keyboard overlap fix ---------- */
+document.addEventListener("focusin",function(e){
+  if(!e.target.matches) return;
+  if(e.target.matches("input,textarea,select")){
+    var box=e.target.closest(".modal-box");
+    if(box) setTimeout(function(){ try{ e.target.scrollIntoView({block:"center",behavior:"smooth"}); }catch(err){} },300);
+  }
+});
+function admFeatured(){
+  return '<p style="font-size:.9rem">These are the slides in the big banner at the top of the home page.</p>'+
+   S.featured.map(function(f,i){ return '<div class="glass" style="padding:16px;margin-bottom:14px">'+
+    '<div style="display:flex;gap:10px;align-items:center;margin-bottom:10px"><b style="flex:1;font-family:Sora">Slide '+(i+1)+'</b>'+
+    '<button class="btn btn-ghost btn-sm" onclick="moveSlide('+i+',-1)" aria-label="Move up">↑</button>'+
+    '<button class="btn btn-ghost btn-sm" onclick="moveSlide('+i+',1)" aria-label="Move down">↓</button>'+
+    '<button class="btn btn-ghost btn-sm" onclick="delSlide('+i+')">Delete</button></div>'+
+    '<div class="field"><label>Headline</label><input class="inp" value="'+esc(f.title)+'" oninput="setF('+i+',\'title\',this.value)"></div>'+
+    '<div class="two"><div class="field"><label>Ribbon text</label><input class="inp" value="'+esc(f.kicker)+'" oninput="setF('+i+',\'kicker\',this.value)"></div>'+
+    '<div class="field"><label>Price line</label><input class="inp" value="'+esc(f.price)+'" oninput="setF('+i+',\'price\',this.value)"></div></div>'+
+    '<div class="field"><label>Sub-line</label><input class="inp" value="'+esc(f.sub)+'" oninput="setF('+i+',\'sub\',this.value)"></div>'+
+    '<div class="two"><div class="field"><label>Dates</label><input class="inp" value="'+esc(f.date)+'" oninput="setF('+i+',\'date\',this.value)"></div>'+
+    '<div class="field"><label>Place</label><input class="inp" value="'+esc(f.place)+'" oninput="setF('+i+',\'place\',this.value)"></div></div>'+
+    '<div class="two"><div class="field"><label>Books into</label><select class="inp" onchange="setF('+i+',\'link\',this.value)">'+
+      S.events.map(function(x){return '<option value="'+x.id+'"'+(f.link===x.id?' selected':'')+'>'+esc(x.name)+'</option>';}).join("")+'</select></div>'+
+    '<div class="field"><label>Fallback artwork (used until you upload a banner image)</label><select class="inp" onchange="setF('+i+',\'art\',Number(this.value))">'+
+      ART.map(function(a,k){return '<option value="'+k+'"'+(Number(f.art)===k?' selected':'')+'>Preset '+(k+1)+'</option>';}).join("")+'</select></div></div>'+
+    '<div class="row">'+
+      (f.img?'<img src="'+esc(f.img)+'" alt="" style="width:84px;height:36px;object-fit:cover;border-radius:8px;border:1px solid var(--line-strong)">':
+        '<div style="width:84px;height:36px;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted-2);font-size:.65rem">No image</div>')+
+      '<div class="grow"><b>Banner image</b><div style="font-size:.8rem;color:var(--muted)">Wide poster for this slide. You will crop it to fit before it saves.</div>'+
+      '<input class="inp mt" type="file" accept="image/*" onchange="uploadFeaturedImg(event,'+i+')" style="max-width:260px"></div>'+
+      (f.img?'<button class="btn btn-ghost btn-sm" onclick="removeFeaturedImg('+i+')">Remove</button>':'')+
+    '</div>'+
+   '</div>'; }).join("")+
+   '<button class="btn btn-primary" onclick="addSlide()">+ Add a featured slide</button>';
+}
+function toggleRevoke(code){
+  var sq=S.squads[code]; if(!sq) return;
+  sq.revoked=!sq.revoked; save(); renderAdmin();
+  toast(sq.revoked?"Access card revoked.":"Access card restored.");
+}
+function admSquads(){
+  var codes=Object.keys(S.squads);
+  var squadBookings=S.bookings.filter(function(b){return b.squadCode;});
+  var totalPasses=squadBookings.reduce(function(a,b){return a+Number(b.qty||0);},0);
+  var emails={};
+  codes.forEach(function(c){ S.squads[c].members.forEach(function(m){ if(m.email) emails[m.email]=1; }); });
+  (S.guestlist||[]).forEach(function(g){ if(g.email) emails[g.email]=1; });
+  var totalContacts=Object.keys(emails).length;
+  return '<div class="stats mt" style="margin-bottom:22px">'+
+    '<div class="stat"><div class="num">'+codes.length+'</div><small>Total squads created</small></div>'+
+    '<div class="stat"><div class="num">'+totalPasses+'</div><small>Total squad passes sold</small></div>'+
+    '<div class="stat"><div class="num">'+totalContacts+'</div><small>Unique contacts collected</small></div>'+
+  '</div>'+
+  '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px">'+
+    '<a class="btn btn-squad btn-sm" href="#/gate" target="_blank">Open Gate Scanner ↗</a>'+
+    '<button class="btn btn-primary btn-sm" onclick="downloadSquadCSV()">Download Squad Data (CSV / Excel)</button>'+
+  '</div>'+
+  (codes.length? codes.slice().reverse().map(function(c){ var sq=S.squads[c];
+    return '<div class="glass" style="padding:16px;margin-bottom:14px">'+
+      '<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">'+
+        '<h3 style="flex:1">'+esc(sq.name)+'</h3>'+
+        '<span class="tag">'+sq.members.length+' members</span>'+
+        (sq.revoked?'<span class="tag" style="color:#ff9aa8">⛔ Revoked</span>':sq.accessId?'<span class="tag" style="color:'+(sq.checkedIn?'#8ef0b8':'#cdb8ff')+'">'+(sq.checkedIn?'✅ Checked in':'Access card ready')+'</span>':'<span class="tag">Not yet unlocked</span>')+
+      '</div>'+
+      (sq.accessId?'<div class="ac-token mt" style="display:inline-block">'+esc(sq.accessId)+'</div>':'')+
+      '<p style="font-size:.85rem;margin:10px 0 0">Leader: <b style="color:#fff">'+esc(sq.leader.name)+'</b> · '+esc(sq.leader.email)+' · '+esc(sq.leader.whatsapp)+'</p>'+
+      '<details class="acc mt"><summary>Member breakdown ('+sq.members.length+')</summary><div class="in tbl-scroll">'+
+        '<table class="tbl"><tr><th>Name</th><th>Email</th><th>WhatsApp</th><th>Joined</th></tr>'+
+        sq.members.map(function(m){return '<tr><td>'+esc(m.name)+'</td><td>'+esc(m.email)+'</td><td>'+esc(m.whatsapp)+'</td><td>'+new Date(m.joinedAt).toLocaleString("en-IN")+'</td></tr>';}).join("")+
+        '</table></div></details>'+
+      (sq.accessId?'<button class="btn btn-ghost btn-sm mt" onclick="toggleRevoke(\''+sq.code+'\')">'+(sq.revoked?"Un-revoke access card":"Revoke access card")+'</button>':'')+
+    '</div>';
+  }).join("") : '<p style="color:var(--muted-2)">No squads created yet.</p>')+
+  (S.guestlist&&S.guestlist.length?
+    '<h3 class="mt">MNG // Secret Guestlist ('+S.guestlist.length+')</h3><div class="tbl-scroll mt"><table class="tbl"><tr><th>Name</th><th>Email</th><th>WhatsApp</th><th>Joined</th></tr>'+
+    S.guestlist.slice().reverse().map(function(g){return '<tr><td>'+esc(g.name)+'</td><td>'+esc(g.email)+'</td><td>'+esc(g.whatsapp)+'</td><td>'+new Date(g.joinedAt).toLocaleString("en-IN")+'</td></tr>';}).join("")+'</table></div>'
+    :'');
+}
+function squadCsvText(){
+  var h=["Squad Name","Access ID","Leader Name","Leader Email","Leader WhatsApp","Member Name","Member Email","Member WhatsApp","Joined At","Checked In","Checked In At"];
+  var rows=[];
+  Object.keys(S.squads).forEach(function(c){
+    var sq=S.squads[c];
+    sq.members.forEach(function(m){
+      rows.push([sq.name,sq.accessId||"",sq.leader.name,sq.leader.email,sq.leader.whatsapp,m.name,m.email,m.whatsapp,m.joinedAt,sq.checkedIn?"Yes":"No",sq.checkedInAt||""]);
+    });
+  });
+  return [h].concat(rows).map(function(r){ return r.map(function(x){ return '"'+String(x==null?"":x).replace(/"/g,'""')+'"'; }).join(","); }).join("\n");
+}
+async function downloadSquadCSV(){
+  if(!Object.keys(S.squads).length){ toast("No squad data yet."); return; }
+  var name="mng-squad-data-"+new Date().toISOString().slice(0,10)+".csv", txt=squadCsvText();
+  try{
+    if(window.claude && claude.use){
+      var dl=await claude.use("downloads");
+      if(dl){ await dl.save({filename:name,data:txt}); toast("Squad data downloaded."); return; }
+    }
+  }catch(err){}
+  try{
+    var a=document.createElement("a");
+    a.href=URL.createObjectURL(new Blob([txt],{type:"text/csv"})); a.download=name;
+    document.body.appendChild(a); a.click(); a.remove();
+    toast("Squad data downloaded.");
+  }catch(err){
+    if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(function(){ toast("Copied — paste into Excel or Sheets."); });
+    else toast("Couldn't download or copy.");
+  }
+}
+function admAgents(){
+  return '<p style="font-size:.9rem">Create a login for each staff member or reselling partner who should be able to sell passes from the <a href="#/agent" target="_blank">agent portal</a>. They sign in with the username and password you set here.</p>'+
+   (S.agents.length? S.agents.map(function(a,i){
+     var sold=S.bookings.filter(function(b){return b.agentId===a.id;});
+     return '<div class="row" style="align-items:flex-start;flex-wrap:wrap">'+
+       '<input class="inp" style="max-width:160px" value="'+esc(a.name)+'" placeholder="Full name" oninput="setAgent('+i+',\'name\',this.value)">'+
+       '<input class="inp" style="max-width:140px" value="'+esc(a.username)+'" placeholder="Username" oninput="setAgent('+i+',\'username\',this.value)">'+
+       '<input class="inp" style="max-width:140px" value="'+esc(a.password)+'" placeholder="Password" oninput="setAgent('+i+',\'password\',this.value)">'+
+       '<label style="display:flex;gap:7px;align-items:center;font-size:.83rem;font-weight:700;white-space:nowrap"><input type="checkbox" '+(a.active?"checked":"")+' onchange="setAgent('+i+',\'active\',this.checked)"> Active</label>'+
+       '<span class="tag">'+sold.length+' sales · '+rupee(sold.reduce(function(x,b){return x+Number(b.amount||0);},0))+'</span>'+
+       '<button class="btn btn-ghost btn-sm" onclick="delAgent('+i+')">Remove</button></div>';
+   }).join("") : '<p style="color:var(--muted-2);font-size:.88rem">No agent accounts yet.</p>')+
+   '<button class="btn btn-primary btn-sm" onclick="addAgent()">+ Add an agent</button>'+
+   '<div class="note info mt">Passwords here are stored in plain text in this browser\'s storage — fine for a quick internal desk login, not for anything sensitive. Move this behind real authentication before handing credentials to an outside partner.</div>';
+}
+function setAgent(i,k,v){ S.agents[i][k]=v; save(); }
+function addAgent(){ S.agents.push({id:uid("ag"),name:"New agent",username:"agent"+(S.agents.length+1),password:"pass"+Math.floor(1000+Math.random()*9000),active:true}); save(); renderAdmin(); }
+function delAgent(i){ mngConfirm("Remove this agent login? Past sales stay on record.",function(){ S.agents.splice(i,1); save(); renderAdmin(); }); }
+
+function admPartners(){
+  return '<p style="font-size:.9rem">These scroll left-to-right in the footer of every page. Aim for 10–15 for a full-looking marquee — logos repeat to fill the loop either way.</p>'+
+   '<div class="grid mt" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">'+
+   S.partners.map(function(p,i){ return '<div class="glass" style="padding:14px">'+
+     '<div style="display:flex;gap:10px;align-items:center;margin-bottom:10px">'+
+       (p.img?'<img src="'+esc(p.img)+'" alt="" style="width:44px;height:44px;object-fit:cover;border-radius:9px;border:1px solid var(--line-strong)">':
+         '<div style="width:44px;height:44px;border-radius:9px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted-2);font-size:.6rem">Logo</div>')+
+       '<input class="inp grow" value="'+esc(p.name)+'" placeholder="Company name" oninput="setPartner('+i+',\'name\',this.value)">'+
+     '</div>'+
+     '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">'+
+       '<input class="inp" type="file" accept="image/*" onchange="uploadPartnerLogo(event,'+i+')" style="max-width:150px;font-size:.78rem">'+
+       '<button class="btn btn-ghost btn-sm" onclick="moveParty('+i+',-1)" aria-label="Move earlier">↑</button>'+
+       '<button class="btn btn-ghost btn-sm" onclick="moveParty('+i+',1)" aria-label="Move later">↓</button>'+
+       '<button class="btn btn-ghost btn-sm" onclick="delPartner('+i+')">Remove</button>'+
+     '</div></div>'; }).join("")+
+   '</div>'+
+   '<button class="btn btn-primary mt" onclick="addPartner()">+ Add a partner logo</button>';
+}
+function setPartner(i,k,v){ S.partners[i][k]=v; save(); }
+function addPartner(){ if(S.partners.length>=15){ toast("That's 15 — plenty for a smooth loop. Remove one to add another."); return; } S.partners.push({id:uid("p"),name:"New partner",img:""}); save(); renderAdmin(); }
+function delPartner(i){ S.partners.splice(i,1); save(); renderAdmin(); renderPartners(); }
+function moveParty(i,d){ var j=i+d; if(j<0||j>=S.partners.length) return; var t=S.partners[i]; S.partners[i]=S.partners[j]; S.partners[j]=t; save(); renderAdmin(); renderPartners(); }
+function uploadPartnerLogo(e,i){
+  var f=e.target.files&&e.target.files[0]; if(!f) return;
+  if(f.size>8000000){ toast("Pick an image under 8 MB."); e.target.value=""; return; }
+  var r=new FileReader();
+  r.onload=function(){
+    openCropper(r.result,1,1,300,300,function(dataURL){
+      S.partners[i].img=dataURL; save(); renderAdmin(); renderPartners(); toast("Partner logo updated.");
+    });
+  };
+  r.readAsDataURL(f);
+  e.target.value="";
+}
+
+/* ---------- blog CMS ---------- */
+var ADM_BLOG_EDIT=null;
+function admBlog(){
+  if(ADM_BLOG_EDIT!==null) return admBlogEditor(ADM_BLOG_EDIT);
+  return '<p style="font-size:.9rem">Write and manage the posts shown on the public <a href="#/blog" target="_blank">Blog</a> page.</p>'+
+   '<button class="btn btn-primary" onclick="newPost()">+ Write a new post</button>'+
+   '<div class="mt">'+S.posts.map(function(p,i){ return '<div class="row">'+
+     (p.img?'<img src="'+esc(p.img)+'" alt="" style="width:56px;height:84px;object-fit:cover;border-radius:8px;border:1px solid var(--line-strong)">':
+       '<div style="width:56px;height:84px;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted-2);font-size:.6rem">No image</div>')+
+     '<div class="grow"><b>'+esc(p.title)+'</b><div style="font-size:.78rem;color:var(--muted-2)">'+esc(p.date||"")+'</div></div>'+
+     '<button class="btn btn-ghost btn-sm" onclick="ADM_BLOG_EDIT='+i+';renderAdmin()">Edit</button>'+
+     '<button class="btn btn-ghost btn-sm" onclick="delPost('+i+')">Delete</button></div>'; }).join("")+
+   (S.posts.length?"":'<p style="color:var(--muted-2);font-size:.88rem">No posts yet.</p>')+'</div>';
+}
+function admBlogEditor(i){
+  var p=S.posts[i];
+  return '<button class="btn btn-ghost btn-sm" style="margin-bottom:14px" onclick="ADM_BLOG_EDIT=null;renderAdmin()">← Back to all posts</button>'+
+   '<div class="field"><label>Title</label><input class="inp" value="'+esc(p.title)+'" oninput="setPost('+i+',\'title\',this.value)"></div>'+
+   '<div class="field"><label>Short excerpt (shown on the blog list)</label><textarea class="inp" style="min-height:60px" oninput="setPost('+i+',\'excerpt\',this.value)">'+esc(p.excerpt)+'</textarea></div>'+
+   '<div class="field"><label>Full post</label><textarea class="inp" style="min-height:220px" oninput="setPost('+i+',\'body\',this.value)">'+esc(p.body)+'</textarea></div>'+
+   '<div class="two"><div class="field"><label>Date</label><input class="inp" value="'+esc(p.date||"")+'" oninput="setPost('+i+',\'date\',this.value)"></div>'+
+   '<div class="field"><label>Fallback artwork</label><select class="inp" onchange="setPost('+i+',\'art\',Number(this.value))">'+
+     ART.map(function(a,k){return '<option value="'+k+'"'+(Number(p.art)===k?' selected':'')+'>Preset '+(k+1)+'</option>';}).join("")+'</select></div></div>'+
+   '<div class="row">'+
+     (p.img?'<img src="'+esc(p.img)+'" alt="" style="width:56px;height:84px;object-fit:cover;border-radius:8px;border:1px solid var(--line-strong)">':
+       '<div style="width:56px;height:84px;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted-2);font-size:.6rem">No image</div>')+
+     '<div class="grow"><b>Cover photo</b><div style="font-size:.8rem;color:var(--muted)">You will crop it to match the site\'s poster shape.</div>'+
+     '<input class="inp mt" type="file" accept="image/*" onchange="uploadPostImg(event,'+i+')" style="max-width:260px"></div>'+
+     (p.img?'<button class="btn btn-ghost btn-sm" onclick="setPost('+i+',\'img\',\'\');renderAdmin()">Remove</button>':'')+
+   '</div>'+
+   '<button class="btn btn-primary mt" onclick="ADM_BLOG_EDIT=null;renderAdmin();toast(\'Post saved.\')">Done editing</button>';
+}
+function setPost(i,k,v){ S.posts[i][k]=v; save(); }
+function newPost(){
+  S.posts.unshift({id:uid("bp"),title:"New post title",excerpt:"A one-line summary that shows on the blog list.",
+    body:"Start writing here.",art:S.posts.length%ART.length,img:"",date:new Date().toISOString().slice(0,10)});
+  save(); ADM_BLOG_EDIT=0; renderAdmin();
+}
+function delPost(i){ mngConfirm("Delete this post?",function(){ if(ADM_BLOG_EDIT===i) ADM_BLOG_EDIT=null; S.posts.splice(i,1); save(); renderAdmin(); }); }
+function uploadPostImg(e,i){
+  var f=e.target.files&&e.target.files[0]; if(!f) return;
+  if(f.size>8000000){ toast("Pick an image under 8 MB."); e.target.value=""; return; }
+  var r=new FileReader();
+  r.onload=function(){
+    openCropper(r.result,2,3,800,1200,function(dataURL){
+      S.posts[i].img=dataURL; save(); renderAdmin(); toast("Cover photo updated.");
+    });
+  };
+  r.readAsDataURL(f);
+  e.target.value="";
+}
+function setF(i,k,v){ S.featured[i][k]=v; save(); }
+function uploadFeaturedImg(e,i){
+  var f=e.target.files&&e.target.files[0]; if(!f) return;
+  if(f.size>8000000){ toast("Pick an image under 8 MB."); e.target.value=""; return; }
+  var r=new FileReader();
+  r.onload=function(){
+    openCropper(r.result,8,3,1600,600,function(dataURL){
+      S.featured[i].img=dataURL; save(); renderAdmin(); toast("Banner image updated.");
+    });
+  };
+  r.readAsDataURL(f);
+  e.target.value="";
+}
+function removeFeaturedImg(i){ S.featured[i].img=""; save(); renderAdmin(); toast("Removed — using the fallback artwork."); }
+function addSlide(){ S.featured.push({id:uid("f"),title:"New featured event",kicker:"Promoted",sub:"One line about why this is worth booking.",date:"Oct 2026",place:"Surat",price:"From ₹399",art:S.featured.length%ART.length,img:"",link:(S.events[0]||{}).id}); save(); renderAdmin(); }
+function delSlide(i){ S.featured.splice(i,1); save(); renderAdmin(); }
+function moveSlide(i,d){ var j=i+d; if(j<0||j>=S.featured.length) return; var t=S.featured[i]; S.featured[i]=S.featured[j]; S.featured[j]=t; save(); renderAdmin(); }
+function admBookings(){
+  if(!S.bookings.length) return '<p>No bookings yet. They will appear here the moment someone pays.</p>';
+  var rev=S.bookings.reduce(function(a,b){return a+Number(b.amount||0);},0);
+  return '<div style="display:flex;gap:26px;flex-wrap:wrap;margin-bottom:16px">'+
+   '<div class="stat"><div class="num">'+S.bookings.length+'</div><small>Bookings</small></div>'+
+   '<div class="stat"><div class="num">'+S.bookings.reduce(function(a,b){return a+Number(b.qty||0);},0)+'</div><small>Passes</small></div>'+
+   '<div class="stat"><div class="num">'+rupee(rev)+'</div><small>Collected</small></div></div>'+
+   '<div class="tbl-scroll"><table class="tbl"><tr><th>Code</th><th>Name</th><th>Phone</th><th>WhatsApp</th><th>Ground</th><th>Pass</th><th>Qty</th><th>Amount</th><th>Channel</th><th>Booked</th></tr>'+
+   S.bookings.slice().reverse().map(function(b){ return '<tr><td>'+esc(b.code)+'</td><td>'+esc(b.name)+'</td><td>'+esc(b.phone)+'</td><td>'+esc(b.whatsapp||"—")+'</td><td>'+esc(b.event)+'</td><td>'+esc(b.pass)+'</td><td>'+b.qty+'</td><td>'+rupee(b.amount)+'</td><td>'+esc(b.channel||"Website")+(b.agentName?" · "+esc(b.agentName):"")+'</td><td>'+new Date(b.bookedAt).toLocaleString("en-IN")+'</td></tr>'; }).join("")+
+   '</table></div>'+
+   '<div class="mt" style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-primary btn-sm" onclick="exportCSV()">Download CSV for Excel</button>'+
+   '<button class="btn btn-ghost btn-sm" onclick="copyCSV()">Copy CSV to clipboard</button></div>'+
+   '<div class="note info">For automatic sync, publish a Google Apps Script web app on your sheet and paste its /exec URL into <b>SHEET_WEBHOOK</b> at the top of this file. Every booking and enquiry is then posted there as it happens.</div>';
+}
+function admInquiries(){
+  if(!S.inquiries.length) return '<p>No enquiries yet.</p>';
+  return '<div class="tbl-scroll"><table class="tbl"><tr><th>Name</th><th>Phone</th><th>Email</th><th>Service</th><th>Message</th><th>When</th></tr>'+
+   S.inquiries.slice().reverse().map(function(q){ return '<tr><td>'+esc(q.name)+'</td><td>'+esc(q.phone)+'</td><td>'+esc(q.email)+'</td><td>'+esc(q.service)+'</td><td>'+esc(q.message)+'</td><td>'+new Date(q.at).toLocaleString("en-IN")+'</td></tr>'; }).join("")+'</table></div>';
+}
+function admLogoCenter(){
+  return '<p style="font-size:.9rem">This logo replaces the star emblem in the header everywhere, and is what shows on the public <a href="#/logo" target="_blank">Logo centre</a> page.</p>'+
+   '<div class="row">'+
+     (S.settings.logo?'<img src="'+S.settings.logo+'" alt="Current logo" style="width:64px;height:64px;object-fit:cover;border-radius:12px;border:1px solid var(--line-strong)">':
+       '<div style="width:64px;height:64px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted-2);font-size:.65rem;text-align:center">Default emblem</div>')+
+     '<div class="grow"><b>Company logo</b><div style="font-size:.82rem;color:var(--muted)">Upload it, then crop it to a perfect square before it saves.</div>'+
+     '<input class="inp mt" type="file" accept="image/*" onchange="uploadLogo(event)" style="max-width:280px"></div>'+
+     (S.settings.logo?'<button class="btn btn-ghost btn-sm" onclick="removeLogo()">Remove</button>':'')+
+   '</div>'+
+   '<div class="note info mt">The public Logo centre page shows this logo on a dark and a light plate so partners and press can grab whichever fits their layout.</div>';
+}
+function admSettings(){
+  return '<h4 style="font-family:Sora;margin:0 0 10px">Contact & PIN</h4>'+
+   '<div class="two"><div class="field"><label>Admin PIN</label><input class="inp" value="'+esc(S.settings.pin)+'" oninput="S.settings.pin=this.value"></div>'+
+   '<div class="field"><label>Phone</label><input class="inp" value="'+esc(S.settings.phone)+'" oninput="S.settings.phone=this.value"></div></div>'+
+   '<div class="field"><label>Email</label><input class="inp" value="'+esc(S.settings.email)+'" oninput="S.settings.email=this.value"></div>'+
+   '<div class="field"><label>Top ticker (separate items with ·)</label><textarea class="inp" style="min-height:70px" oninput="S.settings.ticker=this.value">'+esc(S.settings.ticker)+'</textarea></div>'+
+   '<div style="margin-top:20px;margin-bottom:20px;">'+
+     '<button class="btn btn-primary" onclick="save();renderTicker();toast(\'Settings saved successfully!\')">Save Settings</button>'+
+   '</div>'+
+   '<div class="row" style="margin-top:24px;border-top:1px solid var(--line);padding-top:16px;"><div class="grow"><b>Reset the site</b><div style="font-size:.84rem;color:var(--muted)">Restores demo grounds, rates and slides. Bookings are wiped.</div></div>'+
+   '<button class="btn btn-ghost btn-sm" onclick="resetAll()">Reset</button></div>';
+}
+function resetAll(){ mngConfirm("Reset everything to the demo data?",function(){ S=defaults(); save(); ADM.in=true; renderAdmin(); renderTicker(); renderBrandLogo(); renderPartners(); toast("Site reset."); }); }
+
+/* ---------- CSV ---------- */
+function csvText(){
+  var h=["Pass code","Name","Phone","WhatsApp","Email","Ground","Location","Dates","Timings","Pass type","Rate","Quantity","Amount","Status","Channel","Agent","Booked at"];
+  var rows=S.bookings.map(function(b){ return [b.code,b.name,b.phone,b.whatsapp||"",b.email,b.event,b.place,b.date,b.time,b.pass,b.rate,b.qty,b.amount,b.status,b.channel||"Website",b.agentName||"",b.bookedAt]; });
+  return [h].concat(rows).map(function(r){ return r.map(function(c){ return '"'+String(c==null?"":c).replace(/"/g,'""')+'"'; }).join(","); }).join("\n");
+}
+async function exportCSV(){
+  if(!S.bookings.length){ toast("No bookings to export yet."); return; }
+  var name="mng-bookings-"+new Date().toISOString().slice(0,10)+".csv", txt=csvText();
+  try{
+    if(window.claude && claude.use){
+      var dl=await claude.use("downloads");
+      if(dl){ await dl.save({filename:name,data:txt}); toast("CSV saved."); return; }
+    }
+  }catch(err){}
+  try{
+    var a=document.createElement("a");
+    a.href=URL.createObjectURL(new Blob([txt],{type:"text/csv"})); a.download=name;
+    document.body.appendChild(a); a.click(); a.remove();
+    toast("CSV downloaded.");
+  }catch(err){ copyCSV(); }
+}
+function copyCSV(){
+  var txt=csvText();
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(function(){ toast("CSV copied — paste it straight into Excel or Sheets."); },
+      function(){ toast("Copy blocked by the browser."); });
+  } else toast("Clipboard is not available here.");
+}
+
+/* ---------- boot ---------- */
+document.getElementById("yr").textContent=new Date().getFullYear();
+buildNav(); renderTicker(); renderBrandLogo(); renderPartners(); route(); tryRestoreBK();
+addEventListener("keydown",function(e){
+  if(e.key==="Escape"){ closeDrawer(); closeBooking(); closeAdmin(); closeRecover(); }
+  if(e.key==="ArrowRight"&&document.getElementById("slides")) slideBy(1);
+  if(e.key==="ArrowLeft"&&document.getElementById("slides")) slideBy(-1);
+});
+</script>
+</body>
+</html>
